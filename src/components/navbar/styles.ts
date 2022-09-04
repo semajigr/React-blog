@@ -1,14 +1,20 @@
+import { type } from "os";
 import styled from "styled-components";
-import logo from "../src/assets/logo.svg";
 
-const CustomNav = styled.nav`
+const StyledNav = styled.nav`
   max-height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 
-const CustomLink = styled.a`
-  background-image: url(${logo});
+const StyledInput = styled.input`
+  border: 0;
+  background: transparent;
+  width: 50%;
+  min-height: 50px;
 `;
 
-const CustomImg = styled.img``;
+const StyledSignIn = styled.a``;
 
-export { CustomNav, CustomLink };
+export { StyledNav, StyledInput, StyledSignIn };
