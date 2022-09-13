@@ -1,11 +1,11 @@
 import React from "react";
-import { FooterCopyRight, FooterToggle, StyledFooter } from "./styles";
+import { CopyRight, Text, StyledFooter } from "./styles";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <FooterCopyRight>©2022 Blogolog</FooterCopyRight>
-      <FooterToggle>Dark theme</FooterToggle>
+      <CopyRight>©2022 Blogolog</CopyRight>
+      <Text>Dark theme</Text>
     </StyledFooter>
   );
 };

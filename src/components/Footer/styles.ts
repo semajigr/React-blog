@@ -7,10 +7,10 @@ const StyledFooter = styled.div`
   justify-content: space-between;
 `;
 
-const FooterCopyRight = styled.h3`
+const CopyRight = styled.h3`
   ${space};
 `;
 
-const FooterToggle = styled.h3``;
+const Text = styled.h3``;
 
-export { StyledFooter, FooterCopyRight, FooterToggle };
+export { StyledFooter, CopyRight, Text };
