@@ -7,13 +7,9 @@ const StyledMain = styled.div`
 
 const Title = styled.h1`
   font-size: 56px;
+  line-height: 80px;
   color: ${Color.Secondary};
+  margin-top: 72px;
 `;
 
-const StyledTabs = styled.div``;
-
-const ButtonArticels = styled.button``;
-
-const ButtonNews = styled.button``;
-
-export { StyledMain, Title, StyledTabs, ButtonArticels, ButtonNews };
+export { StyledMain, Title };
