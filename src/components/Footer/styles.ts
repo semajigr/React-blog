@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
 import { space } from "styled-system";
 
 const StyledFooter = styled.div`

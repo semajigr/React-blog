@@ -1,26 +1,18 @@
-import React from "react";
-import {
-  BlogContent,
-  BlogDate,
-  BlogImage,
-  BlogTitle,
-  StyledBlogItem,
-} from "./styles";
+import { IArticles } from "../../types";
+import { Content, Date, Image, Title, StyledBlogItem } from "./styles";
 
 interface IProps {
-  imageUrl: any;
-  title: string;
-  publishedAt: string;
+  blog: IArticles;
 }
 
-export const BlogItem = ({ imageUrl, title, publishedAt }: IProps) => {
+export const BlogItem = (blog: IProps) => {
   return (
     <StyledBlogItem>
-      <BlogImage src={imageUrl} />
-      <BlogContent>
-        <BlogDate>{publishedAt}</BlogDate>
-        <BlogTitle>{title}</BlogTitle>
-      </BlogContent>
+      <Image src={blog.blog.imageUrl} alt="blogimage" />
+      <Content>
+        <Date>{blog.blog.publishedAt}</Date>
+        <Title>{blog.blog.title}</Title>
+      </Content>
     </StyledBlogItem>
   );
 };

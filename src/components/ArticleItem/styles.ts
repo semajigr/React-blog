@@ -7,25 +7,30 @@ const StyledArticleItem = styled.li`
   border-radius: 16px;
 `;
 
-const ArticleImage = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 208px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 `;
 
-const ArticleContent = styled.div`
+const Content = styled.div`
   margin: 20px 20px;
 `;
 
-const ArticleDate = styled.h3`
+const Date = styled.h3`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: ${Color.Medium};
   margin-bottom: 5px;
 `;
 
-const ArticleTitle = styled.h2``;
+const Title = styled.h2`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: ${Color.Secondary};
+`;
 
-export {
-  StyledArticleItem,
-  ArticleImage,
-  ArticleContent,
-  ArticleDate,
-  ArticleTitle,
-};
+export { StyledArticleItem, Image, Content, Date, Title };

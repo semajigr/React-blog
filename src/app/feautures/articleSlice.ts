@@ -1,6 +1,5 @@
-import { async } from "@firebase/util";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { articleAPI } from "../../services/articleAPI";
+import { spaceFlightAPI } from "../../services/services";
 import { IArticles } from "../../types";
 
 interface ArticlesState {
@@ -15,13 +14,12 @@ const initialState: ArticlesState = {
   error: null,
 };
 
-const fetchArticles = createAsyncThunk<
-  IArticles[],
-  undefined,
-  { rejectValue: string }
->("articles/fetchArticles", async () => {
-  return await articleAPI.getAllArticles();
-});
+const fetchArticles = createAsyncThunk<IArticles[], undefined, { rejectValue: string }>(
+  "articles/fetchArticles",
+  async () => {
+    return await spaceFlightAPI.getAllArticles();
+  }
+);
 
 const articlesSlice = createSlice({
   name: "articles",

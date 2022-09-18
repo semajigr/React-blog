@@ -1,9 +1,9 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArticleItem } from "..";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getArticles } from "../../app/selectors/articleSelector";
-import { ArticleItem } from "../ArticleItem/ArticleItem";
 import { StyledArticleList } from "./styles";
 
 export const ArticleList = () => {
@@ -24,13 +24,11 @@ export const ArticleList = () => {
 
   return (
     <StyledArticleList>
-      {articles.map(({ title, imageUrl, publishedAt }) => {
+      {articles.map((article) => {
         return (
-          <ArticleItem
-            imageUrl={imageUrl}
-            title={title}
-            publishedAt={publishedAt}
-          />
+          <Link to={`/article/${article.id}`}>
+            <ArticleItem article={article} />
+          </Link>
         );
       })}
     </StyledArticleList>

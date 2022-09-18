@@ -1,5 +1,3 @@
-export type Theme = "dark" | "light";
-
 export interface IArticles {
   id: number;
   featured: boolean;
@@ -9,6 +7,16 @@ export interface IArticles {
   newsSite: string;
   summary: string;
   publishedAt: string;
-  launches: [];
-  events: [];
+  launches: ILaunch[];
+  events: IEvent[];
+}
+
+interface ILaunch {
+  id: string;
+  provider: string;
+}
+
+interface IEvent {
+  id: string;
+  provider: string;
 }

@@ -8,19 +8,30 @@ const StyledBlogItem = styled.li`
   list-style-type: none;
 `;
 
-const BlogImage = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 208px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 `;
 
-const BlogContent = styled.div`
+const Content = styled.div`
   margin: 20px 20px;
 `;
 
-const BlogDate = styled.h3`
+const Date = styled.h3`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: ${Color.Medium};
   margin-bottom: 5px;
 `;
 
-const BlogTitle = styled.h2``;
+const Title = styled.h2`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: ${Color.Secondary};
+`;
 
-export { StyledBlogItem, BlogImage, BlogContent, BlogDate, BlogTitle };
+export { StyledBlogItem, Image, Content, Date, Title };

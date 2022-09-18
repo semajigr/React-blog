@@ -1,10 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { CustomLink } from "..";
+import { fetchSignInUser } from "../../app/feautures/userSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
+import { getUserInfo } from "../../app/selectors/userSelector";
 import { ROUTE } from "../../routes";
-import { getFirebaseMessage } from "../../utils/firebaseErrors";
-import { CustomLink } from "../CustomLink/CustomLink";
 import {
   Auth,
   EmailInput,
@@ -19,35 +18,53 @@ import {
 type SignUpValues = {
   email: string;
   password: string;
+  name: string;
 };
 
-export const FormSignUp = () => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+const validateRules = {
+  password: {
+    required: "Password is required !",
+    minLength: {
+      value: 6,
+      message: "Password must be at least 6 characters",
+    },
+    maxLength: {
+      value: 20,
+      message: "Password must be at most 20 characters",
+    },
+  },
+  email: {
+    required: "Email is required !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
+};
+
+interface IProps {
+  toggleModal: (value: boolean) => void;
+}
+
+export const FormSignUp = ({ toggleModal }: IProps) => {
+  const { isPendingAuth, error } = useAppSelector(getUserInfo);
+  const dispatch = useAppDispatch();
 
   const {
-    register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
-  } = useForm<SignUpValues>();
+  } = useForm<SignUpValues>({ defaultValues: { email: "", password: "", name: "" } });
 
-  const onSubmit: SubmitHandler<SignUpValues> = ({ email, password }) => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        navigate("/");
-      })
-      .catch((err) => {
-        setErrorMessage(getFirebaseMessage(err.code));
+  const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
+    dispatch(fetchSignInUser(userInfo))
+      .then(() => {
+        toggleModal(true);
       })
       .finally(() => {
-        setIsLoading(false);
+        reset();
       });
-    reset();
   };
 
   return (
@@ -55,25 +72,39 @@ export const FormSignUp = () => {
       <Form>
         <StyledLabel>
           Email:
-          <EmailInput
-            type="text"
-            placeholder="Your email"
-            {...register("email", { required: "Email is required" })}
+          <Controller
+            name="email"
+            control={control}
+            rules={validateRules.email}
+            render={({ field: { value, onChange } }) => {
+              return (
+                <EmailInput
+                  type="text"
+                  value={value}
+                  onChange={onChange}
+                  placeholder="Your email"
+                />
+              );
+            }}
           />
         </StyledLabel>
         {errors.email && <Error>{errors.email.message}</Error>}
         <StyledLabel>
           Password:
-          <PasswordInput
-            type="password"
-            placeholder="Your password"
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password min 6 symbol",
-              },
-            })}
+          <Controller
+            name="password"
+            control={control}
+            rules={validateRules.password}
+            render={({ field: { value, onChange } }) => {
+              return (
+                <PasswordInput
+                  type="password"
+                  placeholder="Your password"
+                  value={value}
+                  onChange={onChange}
+                />
+              );
+            }}
           />
         </StyledLabel>
         {errors.password && <Error>{errors.password.message}</Error>}
@@ -81,10 +112,8 @@ export const FormSignUp = () => {
           Already have an account?
           <CustomLink to={ROUTE.SIGN_IN}> Sign In</CustomLink>
         </Auth>
-        {errorMessage && <Error>{errorMessage}</Error>}
-        <StyledButton type="submit">
-          {isLoading ? "Loading" : "Sign Up"}
-        </StyledButton>
+        {error && <Error>{error}</Error>}
+        <StyledButton type="submit">Sign Up {isPendingAuth && "Loading"}</StyledButton>
       </Form>
     </StyledForm>
   );

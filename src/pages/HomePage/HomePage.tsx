@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { Main } from "../../components";
-import { ArticleList } from "../../components/ArticleList/ArticleList";
-import { BlogList } from "../../components/BlogList/BlogList";
-import { Tabbar } from "../../components/Tabbar/Tabbar";
-import { StyledHomePage } from "./styles";
+import { useState } from "react";
+import { ArticleList, BlogList, Tabbar } from "../../components";
+import { StyledHomePage, Title } from "./styles";
 
 export const HomePage = () => {
+  const [tab, setTab] = useState("articles");
+
   return (
     <StyledHomePage>
-      <Main />
+      <Title>Blog</Title>
+      <Tabbar tab={tab} setTab={setTab} />
+      {tab === "articles" ? <ArticleList /> : <BlogList />}
     </StyledHomePage>
   );
 };

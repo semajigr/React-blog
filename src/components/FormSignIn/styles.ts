@@ -21,7 +21,7 @@ const StyledLabel = styled.label`
 `;
 
 const EmailInput = styled.input`
-  border: 1px solid ${Color.Gray};
+  border: 1px solid ${Color.Light};
   border-radius: 2px;
   color: ${Color.Medium};
   width: 100%;
@@ -33,7 +33,7 @@ const EmailInput = styled.input`
 `;
 
 const PasswordInput = styled.input`
-  border: 1px solid ${Color.Gray};
+  border: 1px solid ${Color.Light};
   border-radius: 2px;
   color: ${Color.Medium};
   width: 100%;
@@ -45,31 +45,24 @@ const PasswordInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  font-size: 16px;
+  background-color: ${Color.Primary};
+  border: none;
+  color: ${Color.White};
+  font-size: 18px;
   line-height: 24px;
   margin-top: 30px;
   padding: 16px 240px;
-  background-color: ${Color.Primary};
-  color: ${Color.White};
 `;
 
 const Auth = styled.p`
   color: ${Color.Light};
-  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
 `;
 
 const Error = styled.p`
   color: ${Color.Error};
-  margin-bottom: 16px;
+  padding-top: 5px;
 `;
 
-export {
-  StyledForm,
-  Form,
-  StyledLabel,
-  EmailInput,
-  PasswordInput,
-  StyledButton,
-  Auth,
-  Error,
-};
+export { StyledForm, Form, StyledLabel, EmailInput, PasswordInput, StyledButton, Auth, Error };

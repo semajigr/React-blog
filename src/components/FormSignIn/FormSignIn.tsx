@@ -1,10 +1,10 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { CustomLink } from "..";
 import { ROUTE } from "../../routes";
 import { getFirebaseMessage } from "../../utils/firebaseErrors";
-import { CustomLink } from "../CustomLink/CustomLink";
 import {
   Auth,
   EmailInput,
@@ -27,10 +27,10 @@ export const FormSignIn = () => {
   const navigate = useNavigate();
 
   const {
-    register,
     handleSubmit,
     reset,
     formState: { errors },
+    control,
   } = useForm<SignInValues>();
 
   const onSubmit: SubmitHandler<SignInValues> = ({ email, password }) => {
@@ -55,25 +55,37 @@ export const FormSignIn = () => {
       <Form>
         <StyledLabel>
           Email:
-          <EmailInput
-            type="text"
-            placeholder="Your email"
-            {...register("email", { required: "Email is required" })}
+          <Controller
+            name="email"
+            control={control}
+            render={({ field: { value, onChange } }) => {
+              return (
+                <EmailInput
+                  value={value}
+                  onChange={onChange}
+                  type="text"
+                  placeholder="Your email"
+                />
+              );
+            }}
           />
         </StyledLabel>
         {errors.email && <Error>{errors.email.message}</Error>}
         <StyledLabel>
           Password:
-          <PasswordInput
-            type="password"
-            placeholder="Your password"
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password min 6 symbol",
-              },
-            })}
+          <Controller
+            name="password"
+            control={control}
+            render={({ field: { value, onChange } }) => {
+              return (
+                <PasswordInput
+                  value={value}
+                  onChange={onChange}
+                  type="password"
+                  placeholder="Your password"
+                />
+              );
+            }}
           />
         </StyledLabel>
         {errors.password && <Error>{errors.password.message}</Error>}
@@ -82,9 +94,7 @@ export const FormSignIn = () => {
           <CustomLink to={ROUTE.SIGN_UP}> Sign Up</CustomLink>
         </Auth>
         {errorMessage && <Error>{errorMessage}</Error>}
-        <StyledButton type="submit">
-          {isLoading ? "Loading" : "Sign In"}
-        </StyledButton>
+        <StyledButton type="submit">{isLoading ? "Loading" : "Sign In"}</StyledButton>
       </Form>
     </StyledForm>
   );

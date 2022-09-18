@@ -1,8 +1,27 @@
 import { CustomLink } from "./CustomLink/CustomLink";
 import { Footer } from "./Footer/Footer";
-import { Main } from "./Main/Main";
 import { MainTemplate } from "./MainTemplate/MainTemplate";
 import { Navbar } from "./Navbar/Navbar";
 import { RequareAuth } from "./RequareAuth/RequareAuth";
+import { BlogList } from "./BlogList/BlogList";
+import { BlogItem } from "./BlogItem/BlogItem";
+import { ArticleList } from "./ArticleList/ArticleList";
+import { ArticleItem } from "./ArticleItem/ArticleItem";
+import { FormSignIn } from "./FormSignIn/FormSignIn";
+import { FormSignUp } from "./FormSignUp/FormSignUp";
+import { Tabbar } from "./Tabbar/Tabbar";
 
-export { CustomLink, Footer, Main, MainTemplate, Navbar, RequareAuth };
+export {
+  CustomLink,
+  Footer,
+  MainTemplate,
+  Navbar,
+  RequareAuth,
+  BlogList,
+  BlogItem,
+  ArticleList,
+  ArticleItem,
+  FormSignIn,
+  FormSignUp,
+  Tabbar,
+};

@@ -1,7 +1,11 @@
-import React from "react";
 import { ButtonTab, StyledTabbar } from "./styles";
 
-export const Tabbar = ({ setTab }: any) => {
+interface IProps {
+  tab: string;
+  setTab: (tab: string) => void;
+}
+
+export const Tabbar = ({ setTab }: IProps) => {
   return (
     <StyledTabbar>
       <ButtonTab

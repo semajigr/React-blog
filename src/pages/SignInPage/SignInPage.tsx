@@ -1,5 +1,4 @@
-import React from "react";
-import { FormSignIn } from "../../components/FormSignIn/FormSignIn";
+import { FormSignIn } from "../../components";
 import { ROUTE } from "../../routes";
 import { BackToHome, StyledSignIn, Title } from "./styles";
 

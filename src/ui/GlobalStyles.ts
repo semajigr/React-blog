@@ -4,9 +4,8 @@ import { Reset } from "./reset";
 
 export const GlobalStyles = createGlobalStyle`
 body {
-   
     font-family: "Inter", sans-serif;
-    background-color: ${Color.Extra_light};    
+    background-color: ${Color.Extra_Light};    
 }
 ${Reset}
 `;

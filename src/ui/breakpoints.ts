@@ -1,4 +1,4 @@
 export enum Breakpoints {
-  md = "768px",
-  ld = "1024px",
+  MD = 768,
+  LG = 1024,
 }

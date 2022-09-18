@@ -10,7 +10,7 @@ enum Endpoint {
   BLOG_ID = "blogs/{id}",
 }
 
-class ArticleAPI {
+class SpaceFlightAPI {
   private readonly BASE_URL = process.env.REACT_APP_ARTICLES_BASE_URL as string;
 
   private readonly API = axios.create({
@@ -28,6 +28,12 @@ class ArticleAPI {
 
     return data;
   }
+
+  public async getDetailsById() {
+    const { data } = await this.API.get<IArticles[]>(Endpoint.ARTICLES_ID);
+
+    return data;
+  }
 }
 
-export const articleAPI = new ArticleAPI();
+export const spaceFlightAPI = new SpaceFlightAPI();

@@ -1,26 +1,18 @@
-import React from "react";
-import {
-  ArticleContent,
-  ArticleDate,
-  ArticleImage,
-  ArticleTitle,
-  StyledArticleItem,
-} from "./styles";
+import { IArticles } from "../../types";
+import { Content, Date, Image, Title, StyledArticleItem } from "./styles";
 
 interface IProps {
-  imageUrl: any;
-  title: string;
-  publishedAt: string;
+  article: IArticles;
 }
 
-export const ArticleItem = ({ imageUrl, title, publishedAt }: IProps) => {
+export const ArticleItem = (article: IProps) => {
   return (
     <StyledArticleItem>
-      <ArticleImage src={imageUrl} />
-      <ArticleContent>
-        <ArticleDate>{publishedAt}</ArticleDate>
-        <ArticleTitle>{title}</ArticleTitle>
-      </ArticleContent>
+      <Image src={article.article.imageUrl} alt="articleimage" />
+      <Content>
+        <Date>{article.article.publishedAt}</Date>
+        <Title>{article.article.title}</Title>
+      </Content>
     </StyledArticleItem>
   );
 };

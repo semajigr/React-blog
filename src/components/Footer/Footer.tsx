@@ -1,4 +1,3 @@
-import React from "react";
 import { CopyRight, Text, StyledFooter } from "./styles";
 
 export const Footer = () => {
