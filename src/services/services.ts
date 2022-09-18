@@ -4,10 +4,10 @@ import { IArticles } from "../types";
 enum Endpoint {
   ARTICLES = "articles",
   ARTICLES_COUNT = "articles/count",
-  ARTICLES_ID = "articles/{id}",
+  ARTICLES_ID = "articles/",
   BLOG = "blogs",
   BLOG_COUNT = "blogs/count",
-  BLOG_ID = "blogs/{id}",
+  BLOG_ID = "blogs/",
 }
 
 class SpaceFlightAPI {
