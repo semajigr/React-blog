@@ -18,7 +18,6 @@ import {
 type SignUpValues = {
   email: string;
   password: string;
-  name: string;
 };
 
 const validateRules = {
@@ -52,10 +51,10 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
 
   const {
     handleSubmit,
-    reset,
-    control,
     formState: { errors },
-  } = useForm<SignUpValues>({ defaultValues: { email: "", password: "", name: "" } });
+    control,
+    reset,
+  } = useForm<SignUpValues>({ defaultValues: { email: "", password: "" } });
 
   const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
     dispatch(fetchSignInUser(userInfo))
@@ -68,8 +67,8 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <Form>
+    <StyledForm>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <StyledLabel>
           Email:
           <Controller
@@ -112,7 +111,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
           Already have an account?
           <CustomLink to={ROUTE.SIGN_IN}> Sign In</CustomLink>
         </Auth>
-        {error && <Error>{error}</Error>}
+
         <StyledButton type="submit">Sign Up {isPendingAuth && "Loading"}</StyledButton>
       </Form>
     </StyledForm>

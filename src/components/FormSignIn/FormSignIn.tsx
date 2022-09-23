@@ -21,6 +21,27 @@ type SignInValues = {
   password: string;
 };
 
+const validateRules = {
+  password: {
+    required: "Password is required !",
+    minLength: {
+      value: 6,
+      message: "Password must be at least 6 characters",
+    },
+    maxLength: {
+      value: 20,
+      message: "Password must be at most 20 characters",
+    },
+  },
+  email: {
+    required: "Email is required !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
+};
+
 export const FormSignIn = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,6 +79,7 @@ export const FormSignIn = () => {
           <Controller
             name="email"
             control={control}
+            rules={validateRules.email}
             render={({ field: { value, onChange } }) => {
               return (
                 <EmailInput
@@ -76,6 +98,7 @@ export const FormSignIn = () => {
           <Controller
             name="password"
             control={control}
+            rules={validateRules.password}
             render={({ field: { value, onChange } }) => {
               return (
                 <PasswordInput

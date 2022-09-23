@@ -10,6 +10,7 @@ import { ArticleItem } from "./ArticleItem/ArticleItem";
 import { FormSignIn } from "./FormSignIn/FormSignIn";
 import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { Tabbar } from "./Tabbar/Tabbar";
+import { Favorites } from "./Favorites/Favorites";
 
 export {
   CustomLink,
@@ -24,4 +25,5 @@ export {
   FormSignIn,
   FormSignUp,
   Tabbar,
+  Favorites,
 };

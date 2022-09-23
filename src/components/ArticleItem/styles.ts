@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
 const StyledArticleItem = styled.li`
-  background-color: ${Color.White};
   width: 352px;
+  height: 388px;
+  background-color: ${Color.White};
   border-radius: 16px;
 `;
 
@@ -19,11 +20,11 @@ const Content = styled.div`
 `;
 
 const Date = styled.h3`
+  margin-bottom: 5px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Medium};
-  margin-bottom: 5px;
 `;
 
 const Title = styled.h2`

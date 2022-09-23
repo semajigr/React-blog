@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { FormSignUp } from "../../components";
+import { Modal } from "../../components/Modal/Modal";
+import { StyledSignUp, Title } from "./styles";
 
 export const SignUpPage = () => {
   const [isOpen, toggleModal] = useState(false);
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <StyledSignUp>
+      <Title>Sign Up</Title>
       <FormSignUp toggleModal={toggleModal} />
-      {isOpen}
-    </div>
+      {isOpen && <Modal toggleModal={toggleModal} />}
+    </StyledSignUp>
   );
 };

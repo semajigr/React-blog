@@ -9,11 +9,13 @@ const StyledNav = styled.nav`
   background-color: ${Color.White};
 `;
 
-//const StyledInput = styled.input``;
-
 const NavList = styled.ul`
   display: flex;
   align-items: center;
+`;
+
+const FavoritesItem = styled.li`
+  padding-right: 32px;
 `;
 
 const SearchItem = styled.li`
@@ -26,4 +28,4 @@ const StyledSignIn = styled.a`
   padding-left: 16px;
 `;
 
-export { StyledNav, NavList, SearchItem, StyledSignIn };
+export { StyledNav, NavList, SearchItem, StyledSignIn, FavoritesItem };

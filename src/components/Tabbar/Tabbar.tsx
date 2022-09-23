@@ -1,3 +1,4 @@
+import { CustomSelect } from "../CustomSelect/CustomSelect";
 import { ButtonTab, StyledTabbar } from "./styles";
 
 interface IProps {
@@ -22,6 +23,7 @@ export const Tabbar = ({ setTab }: IProps) => {
       >
         Blogs
       </ButtonTab>
+      <CustomSelect />
     </StyledTabbar>
   );
 };

@@ -7,17 +7,17 @@ const StyledSignIn = styled.div`
 `;
 
 const BackToHome = styled(Link)`
-  color: ${Color.Secondary};
   font-size: 16px;
   line-height: 24px;
+  color: ${Color.Secondary};
 `;
 
 const Title = styled.h1`
-  color: ${Color.Secondary};
-  font-size: 56px;
-  line-height: 80px;
   margin-top: 32px;
   margin-bottom: 72px;
+  font-size: 56px;
+  line-height: 80px;
+  color: ${Color.Secondary};
 `;
 
 export { StyledSignIn, BackToHome, Title };

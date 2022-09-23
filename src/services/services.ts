@@ -29,8 +29,8 @@ class SpaceFlightAPI {
     return data;
   }
 
-  public async getDetailsById() {
-    const { data } = await this.API.get<IArticles[]>(Endpoint.ARTICLES_ID);
+  public async getDetailsById(id: any) {
+    const { data } = await this.API.get<IArticles>(`articles/${id}`);
 
     return data;
   }

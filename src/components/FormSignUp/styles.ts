@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
 const StyledForm = styled.div`
-  background-color: ${Color.White};
-  border-radius: 20px;
+  width: 600px;
+  padding: 30px;
   margin: 0 auto;
   margin-bottom: 150px;
-  padding: 30px;
-  width: 600px;
+  background-color: ${Color.White};
+  border-radius: 20px;
 `;
 
 const Form = styled.form`
@@ -16,41 +16,41 @@ const Form = styled.form`
 `;
 
 const StyledLabel = styled.label`
-  color: ${Color.Secondary};
   font-size: 16px;
-  line-height: 20px;
   font-weight: bold;
+  line-height: 20px;
+  color: ${Color.Secondary};
 `;
 
 const EmailInput = styled.input`
+  width: 100%;
+  padding: 18px;
+  margin-top: 8px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 20px;
   border: 1px solid ${Color.Light};
   border-radius: 2px;
   color: ${Color.Medium};
-  width: 100%;
-  font-size: 16px;
-  line-height: 20px;
-  margin-top: 8px;
-  margin-bottom: 40px;
-  padding: 18px;
 `;
 
 const PasswordInput = styled.input`
+  width: 100%;
+  padding: 18px;
+  margin-top: 8px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 20px;
   border: 1px solid ${Color.Light};
   border-radius: 2px;
   color: ${Color.Medium};
-  width: 100%;
-  font-size: 16px;
-  line-height: 20px;
-  margin-top: 8px;
-  margin-bottom: 50px;
-  padding: 18px;
 `;
 
 const StyledButton = styled.button`
+  padding: 16px 240px;
+  margin-top: 30px;
   font-size: 16px;
   line-height: 24px;
-  margin-top: 30px;
-  padding: 16px 240px;
   background-color: ${Color.Primary};
   color: ${Color.White};
   cursor: pointer;
@@ -62,14 +62,14 @@ const StyledButton = styled.button`
 `;
 
 const Auth = styled.p`
-  color: ${Color.Light};
   font-size: 16px;
   line-height: 20px;
+  color: ${Color.Light};
 `;
 
 const Error = styled.p`
-  color: ${Color.Error};
   margin-bottom: 20px;
+  color: ${Color.Error};
 `;
 
 export { StyledForm, Form, StyledLabel, EmailInput, PasswordInput, StyledButton, Auth, Error };

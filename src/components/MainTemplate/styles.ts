@@ -9,8 +9,8 @@ const StyledMainTemplate = styled.div`
 
 const Container = styled.div`
   flex-grow: 1;
-  margin: 0 auto;
   width: 1120px;
+  margin: 0 auto;
 `;
 
 const Main = styled.div`

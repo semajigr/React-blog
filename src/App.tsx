@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequareAuth } from "./components";
 import {
+  Account,
   ContentPage,
   FavoritesPage,
   HomePage,
@@ -23,6 +24,7 @@ export const App = () => {
         <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />
         <Route element={<RequareAuth />}>
           <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
+          <Route path={ROUTE.ACCOUNT} element={<Account />} />
         </Route>
       </Route>
     </Routes>
