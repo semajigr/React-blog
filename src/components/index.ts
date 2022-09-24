@@ -1,4 +1,3 @@
-import { CustomLink } from "./CustomLink/CustomLink";
 import { Footer } from "./Footer/Footer";
 import { MainTemplate } from "./MainTemplate/MainTemplate";
 import { Navbar } from "./Navbar/Navbar";
@@ -11,9 +10,9 @@ import { FormSignIn } from "./FormSignIn/FormSignIn";
 import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { Tabbar } from "./Tabbar/Tabbar";
 import { Favorites } from "./Favorites/Favorites";
+import { Spinner } from "./Spinner/Spinner";
 
 export {
-  CustomLink,
   Footer,
   MainTemplate,
   Navbar,
@@ -26,4 +25,5 @@ export {
   FormSignUp,
   Tabbar,
   Favorites,
+  Spinner,
 };

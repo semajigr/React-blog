@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArticleItem } from "..";
+import { ArticleItem, Spinner } from "..";
 import { fetchArticles } from "../../app/feautures/articleSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getArticles } from "../../app/selectors/articleSelector";
@@ -15,7 +15,7 @@ export const ArticleList = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -27,7 +27,7 @@ export const ArticleList = () => {
       {articles.map((article) => {
         return (
           <Link to={`/article/${article.id}`}>
-            <ArticleItem article={article} />
+            <ArticleItem article={article} key={article.id} />
           </Link>
         );
       })}

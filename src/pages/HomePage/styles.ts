@@ -1,9 +1,17 @@
 import styled from "styled-components";
+import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledHomePage = styled.div`
-  max-width: 1120px;
+  width: 1120px;
   margin-bottom: 72px;
+
+  ${Media.LG} {
+    width: 686px;
+  }
+  ${Media.MD} {
+    width: 271px;
+  }
 `;
 
 const Title = styled.h1`

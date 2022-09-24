@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelector";
-import { ContentImage, Description, StyledContent, Title } from "./styles";
+import { ContentImage, Description, StyledArticleContent, Title } from "./styles";
 
-export const ContentPage = () => {
+export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
@@ -22,13 +22,12 @@ export const ContentPage = () => {
   if (error) {
     return <h1>Error...</h1>;
   }
-  console.log(details);
 
   return (
-    <StyledContent>
+    <StyledArticleContent>
       <Title>{details.title}</Title>
       <ContentImage src={details.imageUrl} />
       <Description>{details.summary}</Description>
-    </StyledContent>
+    </StyledArticleContent>
   );
 };

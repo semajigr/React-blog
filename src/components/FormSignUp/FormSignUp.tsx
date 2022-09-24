@@ -1,5 +1,4 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { CustomLink } from "..";
 import { fetchSignInUser } from "../../app/feautures/userSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
@@ -11,8 +10,9 @@ import {
   PasswordInput,
   StyledButton,
   StyledForm,
-  StyledLabel,
   Error,
+  SignInLink,
+  StyledTitle,
 } from "./styles";
 
 type SignUpValues = {
@@ -69,47 +69,39 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
   return (
     <StyledForm>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <StyledLabel>
-          Email:
-          <Controller
-            name="email"
-            control={control}
-            rules={validateRules.email}
-            render={({ field: { value, onChange } }) => {
-              return (
-                <EmailInput
-                  type="text"
-                  value={value}
-                  onChange={onChange}
-                  placeholder="Your email"
-                />
-              );
-            }}
-          />
-        </StyledLabel>
+        <StyledTitle>Email</StyledTitle>
+        <Controller
+          name="email"
+          control={control}
+          rules={validateRules.email}
+          render={({ field: { value, onChange } }) => {
+            return (
+              <EmailInput type="text" value={value} onChange={onChange} placeholder="Your email" />
+            );
+          }}
+        />
+
         {errors.email && <Error>{errors.email.message}</Error>}
-        <StyledLabel>
-          Password:
-          <Controller
-            name="password"
-            control={control}
-            rules={validateRules.password}
-            render={({ field: { value, onChange } }) => {
-              return (
-                <PasswordInput
-                  type="password"
-                  placeholder="Your password"
-                  value={value}
-                  onChange={onChange}
-                />
-              );
-            }}
-          />
-        </StyledLabel>
+        <StyledTitle>Password</StyledTitle>
+        <Controller
+          name="password"
+          control={control}
+          rules={validateRules.password}
+          render={({ field: { value, onChange } }) => {
+            return (
+              <PasswordInput
+                type="password"
+                placeholder="Your password"
+                value={value}
+                onChange={onChange}
+              />
+            );
+          }}
+        />
         {errors.password && <Error>{errors.password.message}</Error>}
         <Auth>
           Already have an account?
-          <CustomLink to={ROUTE.SIGN_IN}> Sign In</CustomLink>
+          <SignInLink to={ROUTE.SIGN_IN}> Sign In</SignInLink>
         </Auth>
 
         <StyledButton type="submit">Sign Up {isPendingAuth && "Loading"}</StyledButton>

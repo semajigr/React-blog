@@ -13,6 +13,7 @@ import {
 import articlesReducer from "./feautures/articleSlice";
 import blogsReducer from "./feautures/blogSlice";
 import articleDetailsReducer from "./feautures/articleDetailsSlice";
+import blogDetailsReducer from "./feautures/blogDetailsSlice";
 import userReducer from "./feautures/userSlice";
 
 const persistConfig = {
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   blogs: blogsReducer,
   articleDetails: articleDetailsReducer,
   user: userReducer,
+  blogDetails: blogDetailsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

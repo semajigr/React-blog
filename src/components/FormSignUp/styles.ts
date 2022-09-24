@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
@@ -15,7 +16,7 @@ const Form = styled.form`
   flex-direction: column;
 `;
 
-const StyledLabel = styled.label`
+const StyledTitle = styled.h3`
   font-size: 16px;
   font-weight: bold;
   line-height: 20px;
@@ -67,9 +68,25 @@ const Auth = styled.p`
   color: ${Color.Light};
 `;
 
+const SignInLink = styled(Link)`
+  font-size: 16px;
+  line-height: 20px;
+  color: ${Color.Primary};
+`;
+
 const Error = styled.p`
   margin-bottom: 20px;
   color: ${Color.Error};
 `;
 
-export { StyledForm, Form, StyledLabel, EmailInput, PasswordInput, StyledButton, Auth, Error };
+export {
+  StyledForm,
+  Form,
+  StyledTitle,
+  EmailInput,
+  PasswordInput,
+  StyledButton,
+  Auth,
+  Error,
+  SignInLink,
+};

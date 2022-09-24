@@ -1,5 +1,5 @@
 import { CustomSelect } from "../CustomSelect/CustomSelect";
-import { ButtonTab, StyledTabbar } from "./styles";
+import { ButtonTab, ContainerTab, StyledTabbar } from "./styles";
 
 interface IProps {
   tab: string;
@@ -9,20 +9,22 @@ interface IProps {
 export const Tabbar = ({ setTab }: IProps) => {
   return (
     <StyledTabbar>
-      <ButtonTab
-        onClick={() => {
-          setTab("articles");
-        }}
-      >
-        Articles
-      </ButtonTab>
-      <ButtonTab
-        onClick={() => {
-          setTab("blogs");
-        }}
-      >
-        Blogs
-      </ButtonTab>
+      <ContainerTab>
+        <ButtonTab
+          onClick={() => {
+            setTab("articles");
+          }}
+        >
+          Articles
+        </ButtonTab>
+        <ButtonTab
+          onClick={() => {
+            setTab("blogs");
+          }}
+        >
+          Blogs
+        </ButtonTab>
+      </ContainerTab>
       <CustomSelect />
     </StyledTabbar>
   );

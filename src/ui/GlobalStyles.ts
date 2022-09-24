@@ -8,4 +8,8 @@ body {
     background-color: ${Color.Extra_Light};    
 }
 ${Reset}
+
+body {
+    background: ${Color.Gray};
+}
 `;

@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequareAuth } from "./components";
 import {
   Account,
-  ContentPage,
+  ArticleContentPage,
+  BlogContentPage,
   FavoritesPage,
   HomePage,
   NotFoundPage,
@@ -20,7 +21,8 @@ export const App = () => {
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
-        <Route path={ROUTE.CONTENT} element={<ContentPage />} />
+        <Route path={ROUTE.ARTICLE} element={<ArticleContentPage />} />
+        <Route path={ROUTE.BLOG} element={<BlogContentPage />} />
         <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />
         <Route element={<RequareAuth />}>
           <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />

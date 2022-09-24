@@ -3,9 +3,16 @@ import { Color } from "../../ui/colors";
 
 const StyledTabbar = styled.div`
   display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
   margin-top: 40px;
   margin-bottom: 64px;
-  border-bottom: 2px solid ${Color.Light};
+`;
+
+const ContainerTab = styled.div`
+  width: 100%;
+  border-bottom: 2px solid ${Color.Medium};
+  margin-bottom: 40px;
 `;
 
 const ButtonTab = styled.button`
@@ -21,4 +28,4 @@ const ButtonTab = styled.button`
   }
 `;
 
-export { StyledTabbar, ButtonTab };
+export { StyledTabbar, ButtonTab, ContainerTab };

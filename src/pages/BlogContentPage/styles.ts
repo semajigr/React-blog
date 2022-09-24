@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledContent = styled.div`
+const StyledBlogContent = styled.div`
   max-width: 1120px;
 `;
 
@@ -19,4 +19,4 @@ const ContentImage = styled.img`
 
 const Description = styled.p``;
 
-export { StyledContent, Title, ContentImage, Description };
+export { StyledBlogContent, Title, ContentImage, Description };

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledBlogItem = styled.li`
@@ -7,6 +8,14 @@ const StyledBlogItem = styled.li`
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
+
+  ${Media.LG} {
+    width: 328px;
+  }
+
+  ${Media.MD} {
+    width: 272px;
+  }
 `;
 
 const Image = styled.img`

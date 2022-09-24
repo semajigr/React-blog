@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BlogItem } from "..";
+import { BlogItem, Spinner } from "..";
 import { fetchBlogs } from "../../app/feautures/blogSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getBlogs } from "../../app/selectors/blogSelector";
@@ -14,7 +14,7 @@ export const BlogList = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -24,7 +24,7 @@ export const BlogList = () => {
   return (
     <StyledBlogList>
       {blogs.map((blog) => {
-        return <BlogItem blog={blog} />;
+        return <BlogItem blog={blog} key={blog.id} />;
       })}
     </StyledBlogList>
   );
