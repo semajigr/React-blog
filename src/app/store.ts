@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/es/storage";
 import {
   persistStore,
   persistReducer,
@@ -15,19 +15,21 @@ import blogsReducer from "./feautures/blogSlice";
 import articleDetailsReducer from "./feautures/articleDetailsSlice";
 import blogDetailsReducer from "./feautures/blogDetailsSlice";
 import userReducer from "./feautures/userSlice";
+import favoritesReducer from "./feautures/favoritesSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites", "user"],
+  whitelist: ["favorites"],
 };
 
 const rootReducer = combineReducers({
+  user: userReducer,
   articles: articlesReducer,
   blogs: blogsReducer,
   articleDetails: articleDetailsReducer,
-  user: userReducer,
   blogDetails: blogDetailsReducer,
+  favorites: favoritesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,6 +1,12 @@
-import React from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { Favorites } from "../../components";
+import { StyledFavoritesPage, Title } from "./styles";
 
 export const FavoritesPage = () => {
-  return <Favorites />;
+  return (
+    <StyledFavoritesPage>
+      <Title>Favorites</Title>
+      <Favorites />
+    </StyledFavoritesPage>
+  );
 };

@@ -3,7 +3,7 @@ import { ArticleList, BlogList, Tabbar } from "../../components";
 import { StyledHomePage, Title } from "./styles";
 
 export const HomePage = () => {
-  const [tab, setTab] = useState("articles");
+  const [tab, setTab] = useState<string>("articles");
 
   return (
     <StyledHomePage>

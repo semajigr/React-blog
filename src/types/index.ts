@@ -12,6 +12,19 @@ export interface IArticles {
   events?: IEvent[];
 }
 
+export interface IBlogs {
+  id?: number;
+  title?: string;
+  url?: string;
+  imageUrl?: string;
+  newsSite?: string;
+  summary?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  launches?: ILaunch[];
+  events?: IEvent[];
+}
+
 interface ILaunch {
   id?: string;
   provider?: string;

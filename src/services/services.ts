@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IArticles } from "../types";
+import { IArticles, IBlogs } from "../types";
 
 enum Endpoint {
   ARTICLES = "articles?_limit=12",
@@ -12,7 +12,6 @@ enum Endpoint {
 
 class SpaceFlightAPI {
   private readonly BASE_URL = process.env.REACT_APP_ARTICLES_BASE_URL as string;
-
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });
@@ -24,19 +23,19 @@ class SpaceFlightAPI {
   }
 
   public async getAllBlogs() {
-    const { data } = await this.API.get<IArticles[]>(Endpoint.BLOG);
+    const { data } = await this.API.get<IBlogs[]>(Endpoint.BLOG);
 
     return data;
   }
 
   public async getArticleDetailsById(id: any) {
-    const { data } = await this.API.get<IArticles>(`articles/${id}`);
+    const { data } = await this.API.get<IArticles>(`${Endpoint.ARTICLES_ID}${id}`);
 
     return data;
   }
 
   public async getBlogDetailsById(id: any) {
-    const { data } = await this.API.get<IArticles>(`blogs/${id}`);
+    const { data } = await this.API.get<IBlogs>(`${Endpoint.BLOG_ID}${id}`);
 
     return data;
   }

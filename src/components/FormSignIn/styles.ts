@@ -2,18 +2,15 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
   width: 600px;
   padding: 30px;
   margin: 0 auto;
   margin-bottom: 150px;
   background-color: ${Color.White};
   border-radius: 20px;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
 `;
 
 const StyledTitle = styled.h3`
@@ -30,8 +27,7 @@ const EmailInput = styled.input`
   margin-bottom: 40px;
   font-size: 16px;
   line-height: 20px;
-  border: 1px solid ${Color.Light};
-  border-radius: 2px;
+  border: 1px solid ${Color.Extra_Light};
   color: ${Color.Medium};
 `;
 
@@ -42,8 +38,7 @@ const PasswordInput = styled.input`
   margin-bottom: 50px;
   font-size: 16px;
   line-height: 20px;
-  border: 1px solid ${Color.Light};
-  border-radius: 2px;
+  border: 1px solid ${Color.Extra_Light};
   color: ${Color.Medium};
 `;
 
@@ -81,7 +76,6 @@ const Error = styled.p`
 
 export {
   StyledForm,
-  Form,
   StyledTitle,
   EmailInput,
   PasswordInput,

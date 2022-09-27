@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
 import { spaceFlightAPI } from "../../services/services";
 import { IArticles } from "../../types";
 
@@ -16,8 +17,13 @@ const initialState: BlogsState = {
 
 const fetchBlogs = createAsyncThunk<IArticles[], undefined, { rejectValue: string }>(
   "blogs/fetchBlogs",
-  async () => {
-    return await spaceFlightAPI.getAllBlogs();
+  async (_, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getAllBlogs();
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
   }
 );
 

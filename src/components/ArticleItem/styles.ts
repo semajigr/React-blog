@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FavoritesIcon } from "../../assets";
 import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
@@ -37,10 +38,25 @@ const Date = styled.h3`
 `;
 
 const Title = styled.h2`
+  height: 84px;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
 `;
 
-export { StyledArticleItem, Image, Content, Date, Title };
+const Button = styled.button`
+  position: relative;
+  left: 90%;
+  background: none;
+  cursor: pointer;
+`;
+
+const FavoriteIcon = styled(FavoritesIcon)`
+  :hover,
+  :active {
+    fill: red;
+  }
+`;
+
+export { StyledArticleItem, Image, Content, Date, Title, Button, FavoriteIcon };

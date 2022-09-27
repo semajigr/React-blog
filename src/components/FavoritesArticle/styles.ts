@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import { FavoritesIcon } from "../../assets";
 import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
-const StyledBlogItem = styled.li`
-  list-style-type: none;
+const StyledFavoritesArticle = styled.li`
   width: 352px;
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
+  list-style: none;
 
   ${Media.LG} {
     width: 328px;
@@ -26,7 +25,7 @@ const Image = styled.img`
   border-top-right-radius: 16px;
 `;
 
-const Content = styled.div`
+const Description = styled.div`
   margin: 20px 20px;
 `;
 
@@ -46,18 +45,6 @@ const Title = styled.h2`
   color: ${Color.Secondary};
 `;
 
-const Button = styled.button`
-  position: relative;
-  left: 90%;
-  background: none;
-  cursor: pointer;
-`;
+const Button = styled.button``;
 
-const FavoriteIcon = styled(FavoritesIcon)`
-  :hover,
-  :active {
-    fill: red;
-  }
-`;
-
-export { StyledBlogItem, Image, Content, Date, Title, Button, FavoriteIcon };
+export { StyledFavoritesArticle, Image, Date, Description, Title, Button };

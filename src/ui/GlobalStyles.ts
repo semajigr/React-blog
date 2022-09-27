@@ -5,11 +5,7 @@ import { Reset } from "./reset";
 export const GlobalStyles = createGlobalStyle`
 body {
     font-family: "Inter", sans-serif;
-    background-color: ${Color.Extra_Light};    
+    background-color: ${Color.Gray};    
 }
 ${Reset}
-
-body {
-    background: ${Color.Gray};
-}
 `;

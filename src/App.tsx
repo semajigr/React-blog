@@ -17,7 +17,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path={ROUTE.HOME} element={<MainTemplate />}>
-        <Route index element={<HomePage />} />
+        <Route path={ROUTE.HOME} element={<HomePage />} />
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />

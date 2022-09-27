@@ -1,17 +1,30 @@
-import { IArticles } from "../../types";
-import { Content, Date, Image, Title, StyledBlogItem } from "./styles";
+import { addToFavorites } from "../../app/feautures/favoritesSlice";
+import { useAppDispatch } from "../../app/hooks/hooks";
+import { IArticles, IBlogs } from "../../types";
+import { Content, Date, Image, Title, StyledBlogItem, Button, FavoriteIcon } from "./styles";
 
 interface IProps {
-  blog: IArticles;
+  blog: IBlogs;
 }
 
-export const BlogItem = (blog: IProps) => {
+export const BlogItem = ({ blog }: IProps) => {
+  const { imageUrl, publishedAt, title } = blog;
+  const dispatch = useAppDispatch();
+
+  const handleAddToFavorites = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    dispatch(addToFavorites(blog));
+  };
+
   return (
     <StyledBlogItem>
-      <Image src={blog.blog.imageUrl} alt="blogimage" />
+      <Image src={imageUrl} alt="blogimage" />
       <Content>
-        <Date>{blog.blog.publishedAt}</Date>
-        <Title>{blog.blog.title}</Title>
+        <Date>{publishedAt}</Date>
+        <Title>{title}</Title>
+        <Button onClick={handleAddToFavorites}>
+          <FavoriteIcon />
+        </Button>
       </Content>
     </StyledBlogItem>
   );

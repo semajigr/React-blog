@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
+import { fetchBlogByDetails } from "../../app/feautures/blogDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getDetailsBlog } from "../../app/selectors/blogDetailsSelector";
 import { Spinner } from "../../components/Spinner/Spinner";
-import { ContentImage, Description, StyledBlogContent, Title } from "./styles";
+import { Button, ContentImage, Description, Post, StyledBlogContent, Title } from "./styles";
 
 export const BlogContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
   const { isLoading, error, details } = useAppSelector(getDetailsBlog);
+  const { title, imageUrl, summary } = details;
 
   useEffect(() => {
-    dispatch(fetchArticleByDetails(id!));
+    dispatch(fetchBlogByDetails(id!));
   }, [dispatch, id]);
 
   if (isLoading) {
@@ -23,13 +24,15 @@ export const BlogContentPage = () => {
   if (error) {
     return <h1>Error...</h1>;
   }
-  console.log(details);
 
   return (
     <StyledBlogContent>
-      <Title>{details.title}</Title>
-      <ContentImage src={details.imageUrl} />
-      <Description>{details.summary}</Description>
+      <Button>
+        Home <Post>/ Post {id}</Post>
+      </Button>
+      <Title>{title}</Title>
+      <ContentImage src={imageUrl} />
+      <Description>{summary}</Description>
     </StyledBlogContent>
   );
 };

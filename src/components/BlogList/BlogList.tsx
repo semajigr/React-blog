@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BlogItem, Spinner } from "..";
 import { fetchBlogs } from "../../app/feautures/blogSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
@@ -24,7 +25,11 @@ export const BlogList = () => {
   return (
     <StyledBlogList>
       {blogs.map((blog) => {
-        return <BlogItem blog={blog} key={blog.id} />;
+        return (
+          <Link to={`/blog/${blog.id}`}>
+            <BlogItem blog={blog} key={blog.id} />
+          </Link>
+        );
       })}
     </StyledBlogList>
   );

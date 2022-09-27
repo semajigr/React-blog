@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelector";
-import { ContentImage, Description, StyledArticleContent, Title } from "./styles";
+import { Button, ContentImage, Description, Post, StyledArticleContent, Title } from "./styles";
 
 export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
   const { isLoading, error, details } = useAppSelector(getDetailsArticle);
+  const { title, imageUrl, summary } = details;
 
   useEffect(() => {
     dispatch(fetchArticleByDetails(id!));
@@ -25,9 +26,12 @@ export const ArticleContentPage = () => {
 
   return (
     <StyledArticleContent>
-      <Title>{details.title}</Title>
-      <ContentImage src={details.imageUrl} />
-      <Description>{details.summary}</Description>
+      <Button>
+        Home <Post>/ Post {id}</Post>
+      </Button>
+      <Title>{title}</Title>
+      <ContentImage src={imageUrl} />
+      <Description>{summary}</Description>
     </StyledArticleContent>
   );
 };
