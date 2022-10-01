@@ -1,27 +1,26 @@
 import styled from "styled-components";
 import { Media } from "../../ui/breakpoints";
-import { Color } from "../../ui/colors";
 
 const StyledMainTemplate = styled.div`
   display: flex;
   flex-direction: column;
-
   ${Media.LG} {
   }
 `;
 
 const Container = styled.div`
-  flex-grow: 1;
-  width: 1120px;
+  max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 
   ${Media.LG} {
     width: 686px;
-    margin: 0 auto;
   }
 
   ${Media.MD} {
     width: 271px;
+    padding: 0;
   }
 `;
 

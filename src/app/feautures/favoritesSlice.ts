@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Favorites } from "../../components";
 import { IArticles } from "../../types";
 
 interface FavoritesState {
@@ -18,7 +17,7 @@ const favoritesSlice = createSlice({
       const result = state.favorites.find((article) => article.id === payload.id);
       if (!result) state.favorites.push(payload);
     },
-    removeFavorites(state, { payload }: PayloadAction<IArticles>) {
+    removeFavorites(state, { payload }: PayloadAction<number | undefined>) {
       state.favorites = state.favorites.filter((article) => {
         return article.id !== payload;
       });

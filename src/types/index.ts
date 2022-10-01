@@ -16,6 +16,7 @@ export interface IBlogs {
   id?: number;
   title?: string;
   url?: string;
+  featured?: boolean;
   imageUrl?: string;
   newsSite?: string;
   summary?: string;
@@ -33,4 +34,9 @@ interface ILaunch {
 interface IEvent {
   id?: string;
   provider?: string;
+}
+
+export interface IOption {
+  value: string;
+  label: string;
 }

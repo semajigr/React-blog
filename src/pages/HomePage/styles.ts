@@ -3,7 +3,7 @@ import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledHomePage = styled.div`
-  width: 1120px;
+  min-height: 100vh;
   margin-bottom: 72px;
 
   ${Media.LG} {

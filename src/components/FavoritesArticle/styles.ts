@@ -3,7 +3,7 @@ import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledFavoritesArticle = styled.li`
-  width: 352px;
+  width: 100%;
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
@@ -35,6 +35,10 @@ const Date = styled.h3`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Medium};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.h2`
@@ -43,8 +47,27 @@ const Title = styled.h2`
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  position: relative;
+  left: 90%;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 10px;
+  background-color: ${Color.Secondary};
+  color: ${Color.White};
+  cursor: pointer;
+
+  :hover,
+  :active {
+    background-color: ${Color.Medium};
+  }
+`;
 
 export { StyledFavoritesArticle, Image, Date, Description, Title, Button };

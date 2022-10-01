@@ -7,7 +7,7 @@ export const HomePage = () => {
 
   return (
     <StyledHomePage>
-      <Title>Blog</Title>
+      <Title>{tab === "articles" ? "Articles" : "Blogs"} </Title>
       <Tabbar tab={tab} setTab={setTab} />
       {tab === "articles" ? <ArticleList /> : <BlogList />}
     </StyledHomePage>

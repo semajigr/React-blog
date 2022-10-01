@@ -1,4 +1,3 @@
-import React from "react";
 import { Input, SearchButton, StyledSearch } from "./styles";
 
 export const Search = () => {

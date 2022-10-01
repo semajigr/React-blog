@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
 const StyledBlogContent = styled.div`
-  max-width: 1120px;
+  min-height: 100vh;
   margin-top: 72px;
 `;
 
 const Button = styled.button`
   font-size: 16px;
   line-height: 24px;
+  cursor: pointer;
+  background: none;
 `;
 
 const Post = styled.span`

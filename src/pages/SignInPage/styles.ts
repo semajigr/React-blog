@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
 const StyledSignIn = styled.div`
+  min-height: 100vh;
   margin-top: 60px;
 `;
 

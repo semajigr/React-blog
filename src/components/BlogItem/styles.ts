@@ -5,7 +5,6 @@ import { Color } from "../../ui/colors";
 
 const StyledBlogItem = styled.li`
   list-style-type: none;
-  width: 352px;
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;

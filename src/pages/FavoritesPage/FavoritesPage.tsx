@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { Favorites } from "../../components";
 import { StyledFavoritesPage, Title } from "./styles";
 

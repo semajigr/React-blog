@@ -20,15 +20,15 @@ import favoritesReducer from "./feautures/favoritesSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites"],
+  whitelist: ["favorites", "user"],
 };
 
 const rootReducer = combineReducers({
-  user: userReducer,
   articles: articlesReducer,
   blogs: blogsReducer,
   articleDetails: articleDetailsReducer,
   blogDetails: blogDetailsReducer,
+  user: userReducer,
   favorites: favoritesReducer,
 });
 

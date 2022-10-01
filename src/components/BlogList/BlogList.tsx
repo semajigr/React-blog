@@ -26,7 +26,7 @@ export const BlogList = () => {
     <StyledBlogList>
       {blogs.map((blog) => {
         return (
-          <Link to={`/blog/${blog.id}`}>
+          <Link to={`/blog/${blog.id}`} key={blog.id}>
             <BlogItem blog={blog} key={blog.id} />
           </Link>
         );

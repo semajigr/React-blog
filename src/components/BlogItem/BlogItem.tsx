@@ -1,6 +1,7 @@
 import { addToFavorites } from "../../app/feautures/favoritesSlice";
-import { useAppDispatch } from "../../app/hooks/hooks";
-import { IArticles, IBlogs } from "../../types";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
+import { getUserInfo } from "../../app/selectors/userSelector";
+import { IBlogs } from "../../types";
 import { Content, Date, Image, Title, StyledBlogItem, Button, FavoriteIcon } from "./styles";
 
 interface IProps {
@@ -10,6 +11,7 @@ interface IProps {
 export const BlogItem = ({ blog }: IProps) => {
   const { imageUrl, publishedAt, title } = blog;
   const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector(getUserInfo);
 
   const handleAddToFavorites = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -22,9 +24,13 @@ export const BlogItem = ({ blog }: IProps) => {
       <Content>
         <Date>{publishedAt}</Date>
         <Title>{title}</Title>
-        <Button onClick={handleAddToFavorites}>
-          <FavoriteIcon />
-        </Button>
+        {isAuth ? (
+          <Button onClick={handleAddToFavorites}>
+            <FavoriteIcon />
+          </Button>
+        ) : (
+          ""
+        )}
       </Content>
     </StyledBlogItem>
   );

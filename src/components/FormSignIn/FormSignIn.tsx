@@ -1,4 +1,5 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { fetchSignInUser } from "../../app/feautures/userSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
@@ -43,6 +44,7 @@ const validateRules = {
 export const FormSignIn = () => {
   const { isPendingAuth, error } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const {
     control,
@@ -53,7 +55,9 @@ export const FormSignIn = () => {
 
   const onSubmit: SubmitHandler<SignInValues> = (userInfo) => {
     dispatch(fetchSignInUser(userInfo))
-      .then(() => {})
+      .then((_) => {
+        navigate("/");
+      })
       .finally(() => {
         reset();
       });
@@ -74,6 +78,7 @@ export const FormSignIn = () => {
       />
 
       {errors.email && <Error>{errors.email.message}</Error>}
+
       <StyledTitle>Password</StyledTitle>
       <Controller
         name="password"
@@ -92,12 +97,13 @@ export const FormSignIn = () => {
       />
 
       {errors.password && <Error>{errors.password.message}</Error>}
+
       <Auth>
         Dont have an account?
         <SignUpLink to={ROUTE.SIGN_UP}> Sign Up</SignUpLink>
       </Auth>
       {error && <Error>{error}</Error>}
-      <StyledButton type="submit">{"Loading"}</StyledButton>
+      <StyledButton type="submit">Sign In {isPendingAuth && "Loading"}</StyledButton>
     </StyledForm>
   );
 };

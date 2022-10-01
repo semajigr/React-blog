@@ -1,19 +1,21 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelector";
+import { ROUTE } from "../../routes";
 import { Button, ContentImage, Description, Post, StyledArticleContent, Title } from "./styles";
 
 export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { isLoading, error, details } = useAppSelector(getDetailsArticle);
-  const { title, imageUrl, summary } = details;
+  const { isLoading, error, articleDetails } = useAppSelector(getDetailsArticle);
+  const { title, imageUrl, summary } = articleDetails;
 
   useEffect(() => {
-    dispatch(fetchArticleByDetails(id!));
+    id && dispatch(fetchArticleByDetails(id));
   }, [dispatch, id]);
 
   if (isLoading) {
@@ -26,9 +28,11 @@ export const ArticleContentPage = () => {
 
   return (
     <StyledArticleContent>
-      <Button>
-        Home <Post>/ Post {id}</Post>
-      </Button>
+      <Link to={ROUTE.HOME}>
+        <Button>
+          Home <Post>/ Post {id}</Post>
+        </Button>
+      </Link>
       <Title>{title}</Title>
       <ContentImage src={imageUrl} />
       <Description>{summary}</Description>

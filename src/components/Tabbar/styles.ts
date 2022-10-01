@@ -11,12 +11,11 @@ const StyledTabbar = styled.div`
 
 const ContainerTab = styled.div`
   width: 100%;
-  border-bottom: 2px solid ${Color.Medium};
   margin-bottom: 40px;
 `;
 
 const ButtonTab = styled.button`
-  padding: 0 40px 24px 40px;
+  padding: 0 40px 15px 40px;
   font-size: 16px;
   line-height: 24px;
   background: transparent;
@@ -24,7 +23,8 @@ const ButtonTab = styled.button`
 
   &:active,
   :focus {
-    border-bottom: 2px solid ${Color.Secondary};
+    border-bottom: 1px solid ${Color.Secondary};
+    color: ${Color.Primary};
   }
 `;
 

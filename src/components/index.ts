@@ -11,19 +11,25 @@ import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { Tabbar } from "./Tabbar/Tabbar";
 import { Favorites } from "./Favorites/Favorites";
 import { Spinner } from "./Spinner/Spinner";
+import { CustomSelect } from "./CustomSelect/CustomSelect";
+import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
+import { Input } from "./Input/Input";
 
 export {
+  ArticleItem,
+  ArticleList,
+  BlogItem,
+  BlogList,
+  CustomSelect,
+  Favorites,
+  FavoritesArticle,
   Footer,
+  FormSignIn,
+  FormSignUp,
+  Input,
   MainTemplate,
   Navbar,
   RequareAuth,
-  BlogList,
-  BlogItem,
-  ArticleList,
-  ArticleItem,
-  FormSignIn,
-  FormSignUp,
-  Tabbar,
-  Favorites,
   Spinner,
+  Tabbar,
 };

@@ -7,23 +7,19 @@ interface IProps {
 }
 
 export const Tabbar = ({ setTab }: IProps) => {
+  const handleArticle = () => {
+    setTab("articles");
+  };
+
+  const handleBlog = () => {
+    setTab("blogs");
+  };
+
   return (
     <StyledTabbar>
       <ContainerTab>
-        <ButtonTab
-          onClick={() => {
-            setTab("articles");
-          }}
-        >
-          Articles
-        </ButtonTab>
-        <ButtonTab
-          onClick={() => {
-            setTab("blogs");
-          }}
-        >
-          Blogs
-        </ButtonTab>
+        <ButtonTab onClick={handleArticle}>Articles</ButtonTab>
+        <ButtonTab onClick={handleBlog}>Blogs</ButtonTab>
       </ContainerTab>
       <CustomSelect />
     </StyledTabbar>

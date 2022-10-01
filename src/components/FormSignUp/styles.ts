@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -18,28 +18,6 @@ const StyledTitle = styled.h3`
   font-weight: bold;
   line-height: 20px;
   color: ${Color.Secondary};
-`;
-
-const EmailInput = styled.input`
-  width: 100%;
-  padding: 18px;
-  margin-top: 8px;
-  margin-bottom: 40px;
-  font-size: 16px;
-  line-height: 20px;
-  border: 1px solid ${Color.Extra_Light};
-  color: ${Color.Medium};
-`;
-
-const PasswordInput = styled.input`
-  width: 100%;
-  padding: 18px;
-  margin-top: 8px;
-  margin-bottom: 50px;
-  font-size: 16px;
-  line-height: 20px;
-  border: 1px solid ${Color.Extra_Light};
-  color: ${Color.Medium};
 `;
 
 const StyledButton = styled.button`
@@ -74,13 +52,4 @@ const Error = styled.p`
   color: ${Color.Error};
 `;
 
-export {
-  StyledForm,
-  StyledTitle,
-  EmailInput,
-  PasswordInput,
-  StyledButton,
-  Auth,
-  Error,
-  SignInLink,
-};
+export { StyledForm, StyledTitle, StyledButton, Auth, Error, SignInLink };

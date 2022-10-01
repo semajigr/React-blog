@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
-const StyledFavoritesPage = styled.div``;
+const StyledFavoritesPage = styled.div`
+  min-height: 100vh;
+`;
 
 const Title = styled.h1`
   margin-top: 72px;

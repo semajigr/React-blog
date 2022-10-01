@@ -2,10 +2,10 @@ import axios from "axios";
 import { IArticles, IBlogs } from "../types";
 
 enum Endpoint {
-  ARTICLES = "articles?_limit=12",
+  ARTICLES = "articles",
   ARTICLES_COUNT = "articles/count",
   ARTICLES_ID = "articles/",
-  BLOG = "blogs?_limit=12",
+  BLOG = "blogs",
   BLOG_COUNT = "blogs/count",
   BLOG_ID = "blogs/",
 }
@@ -17,13 +17,13 @@ class SpaceFlightAPI {
   });
 
   public async getAllArticles() {
-    const { data } = await this.API.get<IArticles[]>(Endpoint.ARTICLES);
+    const { data } = await this.API.get<IArticles[]>(Endpoint.ARTICLES + "?_limit=12");
 
     return data;
   }
 
   public async getAllBlogs() {
-    const { data } = await this.API.get<IBlogs[]>(Endpoint.BLOG);
+    const { data } = await this.API.get<IBlogs[]>(Endpoint.BLOG + "?_limit=12");
 
     return data;
   }

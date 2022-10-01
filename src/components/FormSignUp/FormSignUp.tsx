@@ -3,20 +3,41 @@ import { fetchSignUpUser } from "../../app/feautures/userSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
 import { ROUTE } from "../../routes";
-import {
-  Auth,
-  EmailInput,
-  PasswordInput,
-  StyledButton,
-  StyledForm,
-  Error,
-  SignInLink,
-  StyledTitle,
-} from "./styles";
+import { Input } from "../Input/Input";
+import { Auth, StyledButton, StyledForm, Error, SignInLink, StyledTitle } from "./styles";
 
 type SignUpValues = {
   email: string;
   password: string;
+  userName: string;
+};
+
+const validateRules = {
+  password: {
+    required: "Password is required !",
+    minLength: {
+      value: 6,
+      message: "Password must be at least 6 characters",
+    },
+    maxLength: {
+      value: 20,
+      message: "Password must be at most 20 characters",
+    },
+  },
+  email: {
+    required: "Email is required !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
+  name: {
+    required: "Name is required !",
+    pattern: {
+      value: /[A-Za-z]/,
+      message: "Name must contain only letters",
+    },
+  },
 };
 
 interface IProps {
@@ -31,7 +52,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
     control,
     reset,
     formState: { errors },
-  } = useForm<SignUpValues>({ defaultValues: { email: "", password: "" } });
+  } = useForm<SignUpValues>({ defaultValues: { email: "", password: "", userName: "" } });
 
   const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
     dispatch(fetchSignUpUser(userInfo))
@@ -45,21 +66,25 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledTitle>Name</StyledTitle>
+      <Controller
+        name="userName"
+        control={control}
+        rules={validateRules.name}
+        render={({ field: { value, onChange } }) => {
+          return <Input onChange={onChange} value={value} placeholder="Your name" type="text" />;
+        }}
+      />
+
+      {errors.userName && <Error>{errors.userName.message}</Error>}
+
       <StyledTitle>Email</StyledTitle>
       <Controller
         name="email"
         control={control}
-        rules={{
-          required: "Email is required!",
-          pattern: {
-            value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-            message: "Please enter a valid email",
-          },
-        }}
+        rules={validateRules.email}
         render={({ field: { onChange, value } }) => {
-          return (
-            <EmailInput type="text" onChange={onChange} value={value} placeholder="Your email" />
-          );
+          return <Input type="text" onChange={onChange} value={value} placeholder="Your email" />;
         }}
       />
 
@@ -69,33 +94,22 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
       <Controller
         name="password"
         control={control}
-        rules={{
-          required: "Password is required",
-          minLength: {
-            value: 6,
-            message: "Password must be more than 6 characters",
-          },
-          maxLength: {
-            value: 20,
-            message: "Password must be less than 20 characters",
-          },
-        }}
-        render={({ field: { value, onChange } }) => {
+        rules={validateRules.password}
+        render={({ field: { onChange, value } }) => {
           return (
-            <PasswordInput
-              onChange={onChange}
-              type="password"
-              placeholder="Your password"
-              value={value}
-            />
+            <Input onChange={onChange} type="password" placeholder="Your password" value={value} />
           );
         }}
       />
+
       {errors.password && <Error>{errors.password.message}</Error>}
+
       <Auth>
         Already have an account?
         <SignInLink to={ROUTE.SIGN_IN}> Sign In</SignInLink>
       </Auth>
+
+      {error && <Error>{error}</Error>}
 
       <StyledButton type="submit">Sign Up {isPendingAuth && "Loading"}</StyledButton>
     </StyledForm>

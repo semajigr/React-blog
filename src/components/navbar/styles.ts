@@ -3,7 +3,6 @@ import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledNav = styled.nav`
-  min-width: 1120px;
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -20,7 +19,7 @@ const StyledNav = styled.nav`
 
 const NavList = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   width: 300px;
 `;
@@ -32,7 +31,16 @@ const FavoritesItem = styled.li`
 const SearchItem = styled.li`
   list-style: none;
   align-items: center;
-  padding-right: 32px;
+  margin-right: 50px;
 `;
 
-export { StyledNav, NavList, SearchItem, FavoritesItem };
+const SignInItem = styled.li``;
+
+const AccountItem = styled.li``;
+
+const AccountName = styled.div`
+  float: right;
+  padding: 16px 10px;
+`;
+
+export { StyledNav, NavList, SearchItem, FavoritesItem, SignInItem, AccountItem, AccountName };

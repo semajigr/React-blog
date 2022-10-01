@@ -4,7 +4,6 @@ import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledArticleItem = styled.li`
-  width: 352px;
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
@@ -35,6 +34,10 @@ const Date = styled.h3`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Medium};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.h2`
@@ -43,6 +46,10 @@ const Title = styled.h2`
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`

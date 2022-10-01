@@ -1,5 +1,6 @@
 import { addToFavorites } from "../../app/feautures/favoritesSlice";
-import { useAppDispatch } from "../../app/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
+import { getUserInfo } from "../../app/selectors/userSelector";
 import { IArticles } from "../../types";
 import { Content, Date, Image, Title, StyledArticleItem, Button, FavoriteIcon } from "./styles";
 
@@ -10,6 +11,7 @@ interface IProps {
 export const ArticleItem = ({ article }: IProps) => {
   const { imageUrl, publishedAt, title } = article;
   const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector(getUserInfo);
 
   const handleAddToFavorites = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -22,9 +24,13 @@ export const ArticleItem = ({ article }: IProps) => {
       <Content>
         <Date>{publishedAt}</Date>
         <Title>{title}</Title>
-        <Button onClick={handleAddToFavorites}>
-          <FavoriteIcon />
-        </Button>
+        {isAuth ? (
+          <Button onClick={handleAddToFavorites}>
+            <FavoriteIcon />
+          </Button>
+        ) : (
+          ""
+        )}
       </Content>
     </StyledArticleItem>
   );

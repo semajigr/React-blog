@@ -13,7 +13,7 @@ export const FavoritesArticle = ({ article }: IProps) => {
 
   const handleDeleteArticle = (event: any) => {
     event.preventDefault();
-    dispatch(removeFavorites(article));
+    dispatch(removeFavorites(article.id));
   };
   return (
     <StyledFavoritesArticle>
@@ -21,7 +21,7 @@ export const FavoritesArticle = ({ article }: IProps) => {
       <Description>
         <Date>{publishedAt}</Date>
         <Title>{title}</Title>
-        <Button onClick={handleDeleteArticle}>Delete</Button>
+        <Button onClick={handleDeleteArticle}>X</Button>
       </Description>
     </StyledFavoritesArticle>
   );

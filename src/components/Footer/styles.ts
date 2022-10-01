@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { space } from "styled-system";
 import { Media } from "../../ui/breakpoints";
 import { Color } from "../../ui/colors";
 
 const StyledFooter = styled.div`
   display: flex;
   justify-content: space-between;
+  position: sticky;
   padding-block: 20px;
   border-top: 1px solid ${Color.Medium};
 
