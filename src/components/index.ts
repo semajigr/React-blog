@@ -11,7 +11,7 @@ import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { Tabbar } from "./Tabbar/Tabbar";
 import { Favorites } from "./Favorites/Favorites";
 import { Spinner } from "./Spinner/Spinner";
-import { CustomSelect } from "./CustomSelect/CustomSelect";
+import { CustomSelectArticle } from "./CustomSelectArticle/CustomSelectArticle";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 import { Input } from "./Input/Input";
 
@@ -20,7 +20,7 @@ export {
   ArticleList,
   BlogItem,
   BlogList,
-  CustomSelect,
+  CustomSelectArticle,
   Favorites,
   FavoritesArticle,
   Footer,

@@ -27,6 +27,18 @@ const fetchArticles = createAsyncThunk<IArticles[], undefined, { rejectValue: st
   }
 );
 
+const fetchSelectArticles = createAsyncThunk<IArticles[], string, { rejectValue: string }>(
+  "articles/fetchSelectArticles",
+  async (value, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getSelectArticles(value);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
 const articlesSlice = createSlice({
   name: "articles",
   initialState,
@@ -46,8 +58,23 @@ const articlesSlice = createSlice({
         state.error = payload;
       }
     });
+
+    builder.addCase(fetchSelectArticles.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSelectArticles.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.articles = payload;
+    });
+    builder.addCase(fetchSelectArticles.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default articlesSlice.reducer;
-export { fetchArticles };
+export { fetchArticles, fetchSelectArticles };

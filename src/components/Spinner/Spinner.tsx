@@ -1,5 +1,5 @@
 import { StyledSpinner } from "./styles";
 
 export const Spinner = () => {
-  return <StyledSpinner className="loader" />;
+  return <StyledSpinner />;
 };

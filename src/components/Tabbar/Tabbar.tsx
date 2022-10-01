@@ -1,4 +1,6 @@
-import { CustomSelect } from "../CustomSelect/CustomSelect";
+import { useToggle } from "../../hooks/useToggle";
+import { CustomSelectArticle } from "../CustomSelectArticle/CustomSelectArticle";
+import { CustomSelectBlog } from "../CustomSelectBlog/CustomSelectBlog";
 import { ButtonTab, ContainerTab, StyledTabbar } from "./styles";
 
 interface IProps {
@@ -7,12 +9,16 @@ interface IProps {
 }
 
 export const Tabbar = ({ setTab }: IProps) => {
+  const [isActive, setIsActive] = useToggle(false);
+
   const handleArticle = () => {
     setTab("articles");
+    setIsActive();
   };
 
   const handleBlog = () => {
     setTab("blogs");
+    setIsActive();
   };
 
   return (
@@ -21,7 +27,7 @@ export const Tabbar = ({ setTab }: IProps) => {
         <ButtonTab onClick={handleArticle}>Articles</ButtonTab>
         <ButtonTab onClick={handleBlog}>Blogs</ButtonTab>
       </ContainerTab>
-      <CustomSelect />
+      {isActive ? <CustomSelectArticle /> : <CustomSelectBlog />}
     </StyledTabbar>
   );
 };

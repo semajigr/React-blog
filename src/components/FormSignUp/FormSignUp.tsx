@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
 import { ROUTE } from "../../routes";
 import { Input } from "../Input/Input";
+import { Spinner } from "../Spinner/Spinner";
 import { Auth, StyledButton, StyledForm, Error, SignInLink, StyledTitle } from "./styles";
 
 type SignUpValues = {
@@ -111,7 +112,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
 
       {error && <Error>{error}</Error>}
 
-      <StyledButton type="submit">Sign Up {isPendingAuth && "Loading"}</StyledButton>
+      <StyledButton type="submit">Sign Up {isPendingAuth && <Spinner />}</StyledButton>
     </StyledForm>
   );
 };

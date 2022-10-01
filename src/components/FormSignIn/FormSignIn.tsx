@@ -4,6 +4,7 @@ import { fetchSignInUser } from "../../app/feautures/userSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
 import { ROUTE } from "../../routes";
+import { Spinner } from "../Spinner/Spinner";
 import {
   Auth,
   EmailInput,
@@ -103,7 +104,7 @@ export const FormSignIn = () => {
         <SignUpLink to={ROUTE.SIGN_UP}> Sign Up</SignUpLink>
       </Auth>
       {error && <Error>{error}</Error>}
-      <StyledButton type="submit">Sign In {isPendingAuth && "Loading"}</StyledButton>
+      <StyledButton type="submit">Sign In {isPendingAuth && <Spinner />}</StyledButton>
     </StyledForm>
   );
 };

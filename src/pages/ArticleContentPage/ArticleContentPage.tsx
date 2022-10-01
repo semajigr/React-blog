@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
 import { getDetailsArticle } from "../../app/selectors/articleDetailsSelector";
+import { Spinner } from "../../components";
 import { ROUTE } from "../../routes";
 import { Button, ContentImage, Description, Post, StyledArticleContent, Title } from "./styles";
 
@@ -19,7 +20,7 @@ export const ArticleContentPage = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   if (error) {
