@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/React-blog/static/js/main.fde7b3e8.js",
+    "static/media/logo.svg": "/React-blog/static/media/logo.ff6a25346a236e0c880f03051ad152c9.svg",
+    "static/media/signin.svg": "/React-blog/static/media/signin.5a46bb3ab6ae548cebb41ffbd731ad5f.svg",
+    "static/media/favorites.svg": "/React-blog/static/media/favorites.28220c581538742fc7469c10d8a9e269.svg",
+    "index.html": "/React-blog/index.html",
+    "static/media/search.svg": "/React-blog/static/media/search.7f0947de943e2eef52a15b039a4ae707.svg",
+    "main.fde7b3e8.js.map": "/React-blog/static/js/main.fde7b3e8.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fde7b3e8.js"
+  ]
+}
