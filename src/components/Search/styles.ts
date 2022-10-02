@@ -6,19 +6,6 @@ const StyledSearch = styled.div`
   margin-top: 20px;
 `;
 
-const SearchButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-  line-height: 20px;
-  background-color: ${Color.Primary};
-  color: ${Color.White};
-  cursor: pointer;
-
-  :active,
-  :hover {
-    background-color: ${Color.Primary_Light};
-`;
-
 const Input = styled.input`
   width: 100%;
   border: 1px solid ${Color.Extra_Light};
@@ -26,6 +13,7 @@ const Input = styled.input`
   font-size: 16px;
   line-height: 20px;
   padding: 10px;
+  margin-bottom: 40px;
 `;
 
-export { StyledSearch, SearchButton, Input };
+export { StyledSearch, Input };

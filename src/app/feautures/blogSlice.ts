@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { spaceFlightAPI } from "../../services/services";
-import { IArticles, IBlogs } from "../../types";
+import { IBlogs } from "../../types";
 
 interface BlogsState {
   blogs: IBlogs[];
@@ -28,10 +28,22 @@ const fetchBlogs = createAsyncThunk<IBlogs[], undefined, { rejectValue: string }
 );
 
 const fetchSelectBlogs = createAsyncThunk<IBlogs[], string, { rejectValue: string }>(
-  "articles/fetchSelectBlogs",
+  "blogs/fetchSelectBlogs",
   async (value, { rejectWithValue }) => {
     try {
       return await spaceFlightAPI.getSelectBlogs(value);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
+const fetchSearchBlogs = createAsyncThunk<IBlogs[], string, { rejectValue: string }>(
+  "blogs/fetchSearchArticles",
+  async (word, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getSearchBlogs(word);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);
@@ -73,8 +85,23 @@ const blogsSlice = createSlice({
         state.error = payload;
       }
     });
+
+    builder.addCase(fetchSearchBlogs.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSearchBlogs.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.blogs = payload;
+    });
+    builder.addCase(fetchSearchBlogs.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default blogsSlice.reducer;
-export { fetchBlogs, fetchSelectBlogs };
+export { fetchBlogs, fetchSelectBlogs, fetchSearchBlogs };

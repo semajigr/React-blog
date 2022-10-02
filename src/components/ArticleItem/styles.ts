@@ -60,9 +60,13 @@ const Button = styled.button`
 `;
 
 const FavoriteIcon = styled(FavoritesIcon)`
-  :hover,
-  :active {
+  :hover {
     fill: red;
+  }
+
+  :active,
+  :focus {
+    fill: white;
   }
 `;
 

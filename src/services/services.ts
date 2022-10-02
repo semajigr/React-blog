@@ -61,6 +61,26 @@ class SpaceFlightAPI {
 
     return data;
   }
+
+  public async getSearchArticles(word: string) {
+    const params = {
+      title_contains: word,
+    };
+
+    const { data } = await this.API.get<IArticles[]>(Endpoint.ARTICLES, { params });
+
+    return data;
+  }
+
+  public async getSearchBlogs(word: string) {
+    const params = {
+      title_contains: word,
+    };
+
+    const { data } = await this.API.get<IBlogs[]>(Endpoint.BLOG, { params });
+
+    return data;
+  }
 }
 
 export const spaceFlightAPI = new SpaceFlightAPI();

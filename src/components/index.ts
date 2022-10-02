@@ -12,8 +12,12 @@ import { Tabbar } from "./Tabbar/Tabbar";
 import { Favorites } from "./Favorites/Favorites";
 import { Spinner } from "./Spinner/Spinner";
 import { CustomSelectArticle } from "./CustomSelectArticle/CustomSelectArticle";
+import { CustomSelectBlog } from "./CustomSelectBlog/CustomSelectBlog";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 import { Input } from "./Input/Input";
+import { Modal } from "./Modal/Modal";
+import { Portal } from "./Portal/Portal";
+import { Search } from "./Search/Search";
 
 export {
   ArticleItem,
@@ -21,6 +25,7 @@ export {
   BlogItem,
   BlogList,
   CustomSelectArticle,
+  CustomSelectBlog,
   Favorites,
   FavoritesArticle,
   Footer,
@@ -28,8 +33,11 @@ export {
   FormSignUp,
   Input,
   MainTemplate,
+  Modal,
   Navbar,
+  Portal,
   RequareAuth,
+  Search,
   Spinner,
   Tabbar,
 };
