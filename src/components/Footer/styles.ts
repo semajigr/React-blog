@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/breakpoints";
+import { Media } from "../../ui/intex";
 import { Color } from "../../ui/colors";
 
 const StyledFooter = styled.div`
@@ -29,4 +29,9 @@ const Text = styled.h3`
   line-height: 24px;
 `;
 
-export { StyledFooter, CopyRight, Text };
+const ThemeFooter = styled.button`
+  padding: 10px;
+  border-radius: 5px;
+`;
+
+export { StyledFooter, CopyRight, Text, ThemeFooter };

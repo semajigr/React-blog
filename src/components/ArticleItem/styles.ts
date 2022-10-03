@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FavoritesIcon } from "../../assets";
-import { Media } from "../../ui/breakpoints";
+import { Media } from "../../ui/intex";
 import { Color } from "../../ui/colors";
 
 const StyledArticleItem = styled.li`

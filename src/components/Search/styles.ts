@@ -3,6 +3,7 @@ import { Color } from "../../ui/colors";
 
 const StyledSearch = styled.div`
   display: flex;
+  width: 100%;
   margin-top: 20px;
 `;
 

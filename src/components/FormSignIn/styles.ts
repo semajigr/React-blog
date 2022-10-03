@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
+import { Media } from "../../ui/intex";
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 624px;
   padding: 30px;
   margin: 0 auto;
   margin-bottom: 150px;
   background-color: ${Color.White};
   border-radius: 20px;
+
+  ${Media.LG} {
+    width: 688px;
+  }
+
+  ${Media.MD} {
+    width: 272px;
+    padding: 24px;
+    margin-bottom: 56px;
+  }
 `;
 
 const StyledTitle = styled.h3`
@@ -29,6 +40,10 @@ const EmailInput = styled.input`
   line-height: 20px;
   border: 1px solid ${Color.Extra_Light};
   color: ${Color.Medium};
+
+  ${Media.MD} {
+    margin-bottom: 32px;
+  }
 `;
 
 const PasswordInput = styled.input`
@@ -40,6 +55,10 @@ const PasswordInput = styled.input`
   line-height: 20px;
   border: 1px solid ${Color.Extra_Light};
   color: ${Color.Medium};
+
+  ${Media.MD} {
+    margin-bottom: 32px;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -47,6 +66,7 @@ const StyledButton = styled.button`
   margin-top: 30px;
   font-size: 16px;
   line-height: 24px;
+  border-radius: 4px;
   background-color: ${Color.Primary};
   color: ${Color.White};
   cursor: pointer;
@@ -55,18 +75,30 @@ const StyledButton = styled.button`
   :hover {
     background-color: ${Color.Primary_Light};
   }
+
+  ${Media.MD} {
+    padding: 16px 83px;
+  }
 `;
 
 const Auth = styled.p`
   font-size: 16px;
   line-height: 20px;
   color: ${Color.Light};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const SignUpLink = styled(Link)`
   color: ${Color.Primary};
   font-size: 16px;
   line-height: 20px;
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Error = styled.p`

@@ -20,6 +20,11 @@ const ButtonTab = styled.button`
   line-height: 24px;
   background: transparent;
   color: ${Color.Secondary};
+  cursor: pointer;
+
+  :hover {
+    color: ${Color.Primary_Light};
+  }
 
   &:active,
   :focus {

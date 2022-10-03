@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/breakpoints";
+import { Media } from "../../ui/intex";
 
 const StyledMainTemplate = styled.div`
   display: flex;
@@ -15,12 +15,11 @@ const Container = styled.div`
   padding: 0 20px;
 
   ${Media.LG} {
-    width: 686px;
+    width: 728px;
   }
 
   ${Media.MD} {
-    width: 271px;
-    padding: 0;
+    width: 311px;
   }
 `;
 

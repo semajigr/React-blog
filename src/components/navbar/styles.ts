@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/breakpoints";
+import { Media } from "../../ui/intex";
 import { Color } from "../../ui/colors";
 
 const StyledNav = styled.nav`

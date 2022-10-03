@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/breakpoints";
+import { Media } from "../../ui/intex";
 
 const StyledArticleList = styled.ul`
   display: grid;
@@ -9,7 +9,7 @@ const StyledArticleList = styled.ul`
 
   ${Media.LG} {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px 16px;
+    grid-gap: 40px 32px;
   }
 
   ${Media.MD} {
