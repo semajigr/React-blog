@@ -8,7 +8,8 @@ const StyledInput = styled.input`
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 20px;
-  border: 1px solid ${Color.Extra_Light};
+  background-color: ${Color.Light};
+  border: 1px solid ${Color.Shadow};
   color: ${Color.Medium};
 `;
 

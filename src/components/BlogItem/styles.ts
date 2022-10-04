@@ -53,6 +53,10 @@ const Button = styled.button`
 `;
 
 const FavoriteIcon = styled(FavoritesIcon)`
+  path {
+    stroke: ${Color.Secondary};
+  }
+
   :hover {
     fill: red;
   }

@@ -12,7 +12,7 @@ export const Footer = () => {
     <StyledFooter>
       <CopyRight>©2022 Blogologo</CopyRight>
       <ThemeFooter type="button" onClick={toggleTheme}>
-        {theme === "dark" ? "light" : "dark"}
+        {theme === "dark" ? "Light" : "Dark"}
       </ThemeFooter>
     </StyledFooter>
   );

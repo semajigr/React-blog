@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { Color } from "./colors";
 
 export const reset = css`
   * {

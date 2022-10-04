@@ -30,8 +30,13 @@ const Text = styled.h3`
 `;
 
 const ThemeFooter = styled.button`
-  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0 10px;
   border-radius: 5px;
+  background-color: ${Color.Secondary};
+  color: ${Color.White};
 `;
 
 export { StyledFooter, CopyRight, Text, ThemeFooter };

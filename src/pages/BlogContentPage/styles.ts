@@ -11,6 +11,11 @@ const Button = styled.button`
   line-height: 24px;
   cursor: pointer;
   background: none;
+  color: ${Color.Secondary};
+
+  :hover {
+    color: ${Color.PrimaryLight};
+  }
 `;
 
 const Post = styled.span`
@@ -23,6 +28,7 @@ const Title = styled.h2`
   font-weight: bold;
   font-size: 56px;
   line-height: 80px;
+  color: ${Color.Secondary};
 `;
 
 const ContentImage = styled.img`
@@ -36,6 +42,7 @@ const Description = styled.p`
   padding-inline: 100px;
   font-size: 18px;
   line-height: 32px;
+  color: ${Color.Secondary};
 `;
 
 export { StyledBlogContent, Button, Post, Title, ContentImage, Description };

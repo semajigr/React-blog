@@ -6,7 +6,7 @@ const StyledSpinner = styled.div`
   width: 50px;
   height: 50px;
   border: 3px solid ${Color.Primary};
-  border-top: 1px solid ${Color.Primary_Light};
+  border-top: 1px solid ${Color.PrimaryLight};
   border-right: 1px solid transparent;
   border-radius: 50%;
   animation: 1s spin linear infinite;

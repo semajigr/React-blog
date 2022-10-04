@@ -38,7 +38,8 @@ const EmailInput = styled.input`
   margin-bottom: 40px;
   font-size: 16px;
   line-height: 20px;
-  border: 1px solid ${Color.Extra_Light};
+  background-color: ${Color.Light};
+  border: 1px solid ${Color.Shadow};
   color: ${Color.Medium};
 
   ${Media.MD} {
@@ -53,7 +54,8 @@ const PasswordInput = styled.input`
   margin-bottom: 50px;
   font-size: 16px;
   line-height: 20px;
-  border: 1px solid ${Color.Extra_Light};
+  background-color: ${Color.Light};
+  border: 1px solid ${Color.Shadow};
   color: ${Color.Medium};
 
   ${Media.MD} {
@@ -68,12 +70,12 @@ const StyledButton = styled.button`
   line-height: 24px;
   border-radius: 4px;
   background-color: ${Color.Primary};
-  color: ${Color.White};
+  color: ${Color.ExtraLight};
   cursor: pointer;
 
   :active,
   :hover {
-    background-color: ${Color.Primary_Light};
+    background-color: ${Color.PrimaryLight};
   }
 
   ${Media.MD} {
@@ -84,7 +86,7 @@ const StyledButton = styled.button`
 const Auth = styled.p`
   font-size: 16px;
   line-height: 20px;
-  color: ${Color.Light};
+  color: ${Color.SemiGray};
 
   ${Media.MD} {
     font-size: 14px;

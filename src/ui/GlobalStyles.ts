@@ -10,7 +10,8 @@ ${theme}
 
 body {
     font-family: "Inter", sans-serif;
-    background-color: ${Color.Gray};    
+    background-color: var(--gray);  
+    color: ${Color.White}  
 }
 
 `;

@@ -37,12 +37,12 @@ const StyledButton = styled.button`
   line-height: 24px;
   border-radius: 4px;
   background-color: ${Color.Primary};
-  color: ${Color.White};
+  color: ${Color.ExtraLight};
   cursor: pointer;
 
   :active,
   :hover {
-    background-color: ${Color.Primary_Light};
+    background-color: ${Color.PrimaryLight};
   }
 
   ${Media.MD} {
@@ -53,7 +53,7 @@ const StyledButton = styled.button`
 const Auth = styled.p`
   font-size: 16px;
   line-height: 20px;
-  color: ${Color.Light};
+  color: ${Color.SemiGray};
 
   ${Media.MD} {
     font-size: 14px;

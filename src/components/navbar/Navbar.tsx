@@ -6,8 +6,10 @@ import {
   SignInItem,
   AccountItem,
   AccountName,
+  SearchIcons,
+  FavoriteIcon,
 } from "../Navbar/styles";
-import { FavoritesIcon, LogoIcon, SearchIcon, SignInIcon } from "../../assets";
+import { LogoIcon, SignInIcon } from "../../assets";
 import { ROUTE } from "../../routes";
 import { useAppSelector } from "../../app/hooks/hooks";
 import { getUserInfo } from "../../app/selectors/userSelector";
@@ -24,14 +26,14 @@ export const Navbar = () => {
       <NavList>
         <SearchItem>
           <Link to={ROUTE.SEARCH}>
-            <SearchIcon />
+            <SearchIcons />
           </Link>
         </SearchItem>
         {isAuth ? (
           <>
             <FavoritesItem>
               <Link to={ROUTE.FAVORITES}>
-                <FavoritesIcon />
+                <FavoriteIcon />
               </Link>
             </FavoritesItem>
             <AccountItem>

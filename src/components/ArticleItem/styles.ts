@@ -7,7 +7,7 @@ const StyledArticleItem = styled.li`
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
-
+  box-shadow: 0px 0px 10px 3px rgba(29, 42, 52, 0.2);
   ${Media.LG} {
     width: 328px;
   }
@@ -60,13 +60,17 @@ const Button = styled.button`
 `;
 
 const FavoriteIcon = styled(FavoritesIcon)`
+  path {
+    stroke: ${Color.Secondary};
+  }
+
   :hover {
-    fill: red;
+    fill: ${Color.Error};
   }
 
   :active,
   :focus {
-    fill: white;
+    fill: ${Color.White};
   }
 `;
 

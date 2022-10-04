@@ -9,7 +9,7 @@ const StyledSearch = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  border: 1px solid ${Color.Extra_Light};
+  border: 1px solid ${Color.ExtraLight};
   color: ${Color.Medium};
   font-size: 16px;
   line-height: 20px;

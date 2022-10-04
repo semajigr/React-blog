@@ -53,13 +53,13 @@ const LogOut = styled.button`
   font-size: 16px;
   line-height: 20px;
   background-color: ${Color.Primary};
-  color: ${Color.White};
+  color: ${Color.ExtraLight};
   border-radius: 16px;
   cursor: pointer;
 
   :active,
   :hover {
-    background-color: ${Color.Primary_Light};
+    background-color: ${Color.PrimaryLight};
   }
 `;
 

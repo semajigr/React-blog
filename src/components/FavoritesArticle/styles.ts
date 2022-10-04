@@ -64,9 +64,12 @@ const Button = styled.button`
   color: ${Color.White};
   cursor: pointer;
 
-  :hover,
-  :active {
+  :hover {
     background-color: ${Color.Medium};
+  }
+  :active,
+  :focus {
+    background-color: ${Color.Secondary};
   }
 `;
 

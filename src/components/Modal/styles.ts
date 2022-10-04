@@ -46,10 +46,11 @@ const Button = styled.button`
   font-weight: bold;
   padding: 20px;
   border-radius: 16px;
+  color: ${Color.Secondary};
 
   :hover,
   :active {
-    background-color: ${Color.Primary_Light};
+    background-color: ${Color.PrimaryLight};
   }
 `;
 

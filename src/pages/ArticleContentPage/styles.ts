@@ -12,9 +12,10 @@ const Button = styled.button`
   line-height: 24px;
   cursor: pointer;
   background: none;
+  color: ${Color.Secondary};
 
   :hover {
-    color: ${Color.Primary_Light};
+    color: ${Color.PrimaryLight};
   }
 `;
 
@@ -28,6 +29,7 @@ const Title = styled.h2`
   font-weight: bold;
   font-size: 56px;
   line-height: 84px;
+  color: ${Color.Secondary};
 
   ${Media.MD} {
     font-size: 32px;
@@ -52,6 +54,7 @@ const Description = styled.p`
   padding-inline: 100px;
   font-size: 18px;
   line-height: 32px;
+  color: ${Color.Secondary};
 
   ${Media.LG} {
     padding: 0;

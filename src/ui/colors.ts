@@ -1,11 +1,13 @@
 export enum Color {
   Primary = "var(--primary)",
-  Primary_Light = "var(--primaryLight)",
+  PrimaryLight = "var(--primaryLight)",
   Secondary = "var(--secondary)",
   Medium = "var(--medium)",
   Light = "var(--light)",
-  Extra_Light = "var(--extraLight)",
+  ExtraLight = "var(--extraLight)",
   Error = "var(--red)",
   White = "var(--white)",
   Gray = "var(--gray)",
+  Shadow = "var(--shadow)",
+  SemiGray = "var(--semiGray)",
 }

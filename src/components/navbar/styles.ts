@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { Media } from "../../ui/intex";
-import { Color } from "../../ui/colors";
+import { Media } from "ui/intex";
+import { Color } from "ui/colors";
+import { FavoritesIcon, SearchIcon } from "assets";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -34,6 +35,18 @@ const SearchItem = styled.li`
   margin-right: 50px;
 `;
 
+const SearchIcons = styled(SearchIcon)`
+  path {
+    stroke: ${Color.Secondary};
+  }
+`;
+
+const FavoriteIcon = styled(FavoritesIcon)`
+  path {
+    stroke: ${Color.Secondary};
+  }
+`;
+
 const SignInItem = styled.li``;
 
 const AccountItem = styled.li``;
@@ -41,6 +54,17 @@ const AccountItem = styled.li``;
 const AccountName = styled.div`
   float: right;
   padding: 16px 10px;
+  color: ${Color.Secondary};
 `;
 
-export { StyledNav, NavList, SearchItem, FavoritesItem, SignInItem, AccountItem, AccountName };
+export {
+  StyledNav,
+  NavList,
+  SearchItem,
+  FavoritesItem,
+  SignInItem,
+  AccountItem,
+  AccountName,
+  SearchIcons,
+  FavoriteIcon,
+};

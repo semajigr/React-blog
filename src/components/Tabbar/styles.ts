@@ -23,7 +23,7 @@ const ButtonTab = styled.button`
   cursor: pointer;
 
   :hover {
-    color: ${Color.Primary_Light};
+    color: ${Color.PrimaryLight};
   }
 
   &:active,
