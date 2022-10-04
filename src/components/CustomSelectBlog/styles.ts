@@ -1,0 +1,3 @@
+const StyledCustomSelectBlog = {};
+
+export { StyledCustomSelectBlog };

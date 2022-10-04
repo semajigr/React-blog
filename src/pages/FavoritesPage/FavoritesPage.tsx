@@ -1,4 +1,4 @@
-import { Favorites } from "../../components";
+import { Favorites } from "components";
 import { StyledFavoritesPage, Title } from "./styles";
 
 export const FavoritesPage = () => {

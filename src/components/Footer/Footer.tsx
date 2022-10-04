@@ -1,4 +1,4 @@
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "hooks/useTheme";
 import { CopyRight, StyledFooter, ThemeFooter } from "./styles";
 
 export const Footer = () => {

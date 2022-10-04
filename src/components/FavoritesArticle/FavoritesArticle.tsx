@@ -1,6 +1,6 @@
-import { removeFavorites } from "../../app/feautures/favoritesSlice";
-import { useAppDispatch } from "../../app/hooks/hooks";
-import { IArticles } from "../../types";
+import { removeFavorites } from "app/feautures";
+import { useAppDispatch } from "app/hooks";
+import { IArticles } from "types";
 import { Description, Image, Date, StyledFavoritesArticle, Title, Button } from "./styles";
 
 interface IProps {

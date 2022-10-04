@@ -1,6 +1,5 @@
-import { useToggle } from "../../hooks/useToggle";
-import { CustomSelectArticle } from "../CustomSelectArticle/CustomSelectArticle";
-import { CustomSelectBlog } from "../CustomSelectBlog/CustomSelectBlog";
+import { CustomSelectArticle, CustomSelectBlog } from "components";
+import { useToggle } from "hooks/useToggle";
 import { ButtonTab, ContainerTab, StyledTabbar } from "./styles";
 
 interface IProps {

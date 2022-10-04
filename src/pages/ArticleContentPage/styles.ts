@@ -12,6 +12,10 @@ const Button = styled.button`
   line-height: 24px;
   cursor: pointer;
   background: none;
+
+  :hover {
+    color: ${Color.Primary_Light};
+  }
 `;
 
 const Post = styled.span`

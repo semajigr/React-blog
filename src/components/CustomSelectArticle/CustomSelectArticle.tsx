@@ -1,7 +1,8 @@
 import Select, { SingleValue } from "react-select";
-import { fetchSelectArticles } from "../../app/feautures/articleSlice";
-import { useAppDispatch } from "../../app/hooks/hooks";
-import { IOption } from "../../types";
+import { fetchSelectArticles } from "app/feautures";
+import { useAppDispatch } from "app/hooks";
+import { IOption } from "types";
+import { StyledCustomSelectArticle } from "./styles";
 
 const options = [
   { value: "title", label: "Title" },
@@ -15,5 +16,5 @@ export const CustomSelectArticle = () => {
     if (option) dispatch(fetchSelectArticles(option.value));
   };
 
-  return <Select options={options} onChange={handleSort} />;
+  return <Select options={options} onChange={handleSort} styles={StyledCustomSelectArticle} />;
 };

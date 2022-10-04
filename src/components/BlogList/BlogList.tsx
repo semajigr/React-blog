@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BlogItem, Spinner } from "..";
-import { fetchBlogs } from "../../app/feautures/blogSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getBlogs } from "../../app/selectors/blogSelector";
+import { fetchBlogs } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getBlogs } from "app/selectors";
+import { BlogItem, ErrorMessage, Spinner } from "components";
 import { StyledBlogList } from "./styles";
 
 export const BlogList = () => {
@@ -19,7 +19,7 @@ export const BlogList = () => {
   }
 
   if (error) {
-    return <h1>Error...</h1>;
+    return <ErrorMessage />;
   }
 
   return (

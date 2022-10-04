@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArticleItem, Spinner } from "..";
-import { fetchArticles } from "../../app/feautures/articleSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getArticles } from "../../app/selectors/articleSelector";
+import { fetchArticles } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getArticles } from "app/selectors";
+import { ArticleItem, ErrorMessage, Spinner } from "components";
 import { StyledArticleList } from "./styles";
 
 export const ArticleList = () => {
@@ -19,7 +19,7 @@ export const ArticleList = () => {
   }
 
   if (error) {
-    return <h1>Error...</h1>;
+    return <ErrorMessage />;
   }
 
   return (

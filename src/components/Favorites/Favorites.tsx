@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks/hooks";
-import { FavoritesArticle } from "../FavoritesArticle/FavoritesArticle";
+import { useAppSelector } from "app/hooks";
+import { FavoritesArticle } from "components";
 import { StyledFavorites } from "./styles";
 
 export const Favorites = () => {

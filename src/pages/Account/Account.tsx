@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { fetchSignOut } from "../../app/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getUserInfo } from "../../app/selectors/userSelector";
-import { useToggle } from "../../hooks/useToggle";
-import { ROUTE } from "../../routes";
+import { fetchSignOut } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors";
+import { useToggle } from "hooks/useToggle";
+import { ROUTE } from "routes";
 import { Container, CreationTime, Email, LogOut, Name, StyledAccount, Title } from "./styles";
 
 export const Account = () => {

@@ -1,10 +1,9 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { fetchSignUpUser } from "../../app/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getUserInfo } from "../../app/selectors/userSelector";
-import { ROUTE } from "../../routes";
-import { Input } from "../Input/Input";
-import { Spinner } from "../Spinner/Spinner";
+import { fetchSignUpUser } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors";
+import { ROUTE } from "routes";
+import { Input, Spinner } from "components";
 import { Auth, StyledButton, StyledForm, Error, SignInLink, StyledTitle } from "./styles";
 
 type SignUpValues = {

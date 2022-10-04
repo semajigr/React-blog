@@ -1,10 +1,10 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { fetchSignInUser } from "../../app/feautures/userSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getUserInfo } from "../../app/selectors/userSelector";
-import { ROUTE } from "../../routes";
-import { Spinner } from "../Spinner/Spinner";
+import { fetchSignInUser } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors";
+import { ROUTE } from "routes";
+import { Spinner } from "components";
 import {
   Auth,
   EmailInput,

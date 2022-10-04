@@ -1,7 +1,8 @@
 import Select, { SingleValue } from "react-select";
-import { fetchSelectBlogs } from "../../app/feautures/blogSlice";
-import { useAppDispatch } from "../../app/hooks/hooks";
-import { IOption } from "../../types";
+import { fetchSelectBlogs } from "app/feautures";
+import { useAppDispatch } from "app/hooks";
+import { IOption } from "types";
+import { StyledCustomSelectBlog } from "./styles";
 
 const options = [
   { value: "title", label: "Title" },
@@ -15,5 +16,5 @@ export const CustomSelectBlog = () => {
     if (option) dispatch(fetchSelectBlogs(option.value));
   };
 
-  return <Select options={options} onChange={handleSort} />;
+  return <Select options={options} onChange={handleSort} styles={StyledCustomSelectBlog} />;
 };

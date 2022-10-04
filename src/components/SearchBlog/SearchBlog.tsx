@@ -1,11 +1,10 @@
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchSearchBlogs } from "../../app/feautures/blogSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getSearchBlogs } from "../../app/selectors/blogSearch";
-import { IBlogs } from "../../types";
-import { BlogItem } from "../BlogItem/BlogItem";
-import { Spinner } from "../Spinner/Spinner";
+import { fetchSearchBlogs } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getSearchBlogs } from "app/selectors";
+import { IBlogs } from "types";
+import { BlogItem, ErrorMessage, Spinner } from "components";
 import { StyledSearchBlog } from "./styles";
 
 interface IProps {
@@ -22,11 +21,11 @@ export const SearchBlog = ({ value }: IProps) => {
   }, [dispatch, value]);
 
   if (isLoading) {
-    return <h1></h1>;
+    return <Spinner />;
   }
 
   if (error) {
-    return <h1>Error: {error}</h1>;
+    return <ErrorMessage />;
   }
 
   return blogs.length === 0 ? (

@@ -1,7 +1,7 @@
-import { addToFavorites } from "../../app/feautures/favoritesSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getUserInfo } from "../../app/selectors/userSelector";
-import { IBlogs } from "../../types";
+import { addToFavorites } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getUserInfo } from "app/selectors";
+import { IBlogs } from "types";
 import { Content, Date, Image, Title, StyledBlogItem, Button, FavoriteIcon } from "./styles";
 
 interface IProps {

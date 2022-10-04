@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { fetchArticleByDetails } from "../../app/feautures/articleDetailsSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getDetailsArticle } from "../../app/selectors/articleDetailsSelector";
-import { Spinner } from "../../components";
-import { ROUTE } from "../../routes";
+import { Link, useParams } from "react-router-dom";
+import { fetchArticleByDetails } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getDetailsArticle } from "app/selectors";
+import { Spinner, ErrorMessage } from "components";
+import { ROUTE } from "routes";
 import { Button, ContentImage, Description, Post, StyledArticleContent, Title } from "./styles";
 
 export const ArticleContentPage = () => {
@@ -24,7 +23,7 @@ export const ArticleContentPage = () => {
   }
 
   if (error) {
-    return <h1>Error...</h1>;
+    return <ErrorMessage />;
   }
 
   return (

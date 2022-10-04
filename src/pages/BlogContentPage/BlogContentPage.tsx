@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { fetchBlogByDetails } from "../../app/feautures/blogDetailsSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getDetailsBlog } from "../../app/selectors/blogDetailsSelector";
-import { Spinner } from "../../components/Spinner/Spinner";
-import { ROUTE } from "../../routes";
+import { Link, useParams } from "react-router-dom";
+import { fetchBlogByDetails } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getDetailsBlog } from "app/selectors";
+import { ErrorMessage, Spinner } from "components";
+import { ROUTE } from "routes";
 import { Button, ContentImage, Description, Post, StyledBlogContent, Title } from "./styles";
 
 export const BlogContentPage = () => {
@@ -24,7 +23,7 @@ export const BlogContentPage = () => {
   }
 
   if (error) {
-    return <h1>Error...</h1>;
+    return <ErrorMessage />;
   }
 
   return (

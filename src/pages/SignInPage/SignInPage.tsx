@@ -1,5 +1,5 @@
-import { FormSignIn } from "../../components";
-import { ROUTE } from "../../routes";
+import { FormSignIn } from "components";
+import { ROUTE } from "routes";
 import { BackToHome, StyledSignIn, Title } from "./styles";
 
 export const SignInPage = () => {

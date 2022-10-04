@@ -1,11 +1,10 @@
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchSearchArticles } from "../../app/feautures/articleSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks/hooks";
-import { getSearchArticles } from "../../app/selectors/articleSearchSelector";
-import { IArticles } from "../../types";
-import { ArticleItem } from "../ArticleItem/ArticleItem";
-import { Spinner } from "../Spinner/Spinner";
+import { fetchSearchArticles } from "app/feautures";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { getSearchArticles } from "app/selectors";
+import { IArticles } from "types";
+import { ArticleItem, ErrorMessage, Spinner } from "components";
 import { StyledSearchArticle } from "./styles";
 
 interface IProps {
@@ -26,7 +25,7 @@ export const SearchArticle = ({ value }: IProps) => {
   }
 
   if (error) {
-    return <h1>Error: {error}</h1>;
+    return <ErrorMessage />;
   }
 
   return articles.length === 0 ? (

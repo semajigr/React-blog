@@ -1,5 +1,5 @@
+import { Portal, PortalTarget } from "components";
 import { useNavigate } from "react-router-dom";
-import { Portal, PortalTarget } from "../Portal/Portal";
 import { Button, Container, ModalContent, StyledModal, Title } from "./styles";
 
 interface IProps {

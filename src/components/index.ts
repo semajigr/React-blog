@@ -16,8 +16,11 @@ import { CustomSelectBlog } from "./CustomSelectBlog/CustomSelectBlog";
 import { FavoritesArticle } from "./FavoritesArticle/FavoritesArticle";
 import { Input } from "./Input/Input";
 import { Modal } from "./Modal/Modal";
-import { Portal } from "./Portal/Portal";
+import { Portal, PortalTarget } from "./Portal/Portal";
 import { Search } from "./Search/Search";
+import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
+import { SearchArticle } from "./SearchArticle/SearchArticle";
+import { SearchBlog } from "./SearchBlog/SearchBlog";
 
 export {
   ArticleItem,
@@ -26,6 +29,7 @@ export {
   BlogList,
   CustomSelectArticle,
   CustomSelectBlog,
+  ErrorMessage,
   Favorites,
   FavoritesArticle,
   Footer,
@@ -36,8 +40,11 @@ export {
   Modal,
   Navbar,
   Portal,
+  PortalTarget,
   RequareAuth,
   Search,
+  SearchArticle,
+  SearchBlog,
   Spinner,
   Tabbar,
 };
