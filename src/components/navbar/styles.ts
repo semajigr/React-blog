@@ -10,6 +10,7 @@ const StyledNav = styled.nav`
   background-color: ${Color.White};
   width: 100%;
   position: fixed;
+  z-index: 15;
   margin-bottom: 80px;
 `;
 
