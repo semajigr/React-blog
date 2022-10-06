@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
+import { Color } from "ui/colors";
 
 const StyledSpinner = styled.div`
   margin: 0 auto;

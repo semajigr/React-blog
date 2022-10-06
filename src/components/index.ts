@@ -21,12 +21,19 @@ import { Search } from "./Search/Search";
 import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
 import { SearchArticle } from "./SearchArticle/SearchArticle";
 import { SearchBlog } from "./SearchBlog/SearchBlog";
+import { Burger } from "./Burger/Burger";
+import { BurgerNavbar } from "./BurgerNavbar/BurgerNavbar";
+import { Close } from "./Close/Close";
+import { NotFound } from "./NotFound/NotFound";
 
 export {
   ArticleItem,
   ArticleList,
   BlogItem,
   BlogList,
+  Burger,
+  BurgerNavbar,
+  Close,
   CustomSelectArticle,
   CustomSelectBlog,
   ErrorMessage,
@@ -39,6 +46,7 @@ export {
   MainTemplate,
   Modal,
   Navbar,
+  NotFound,
   Portal,
   PortalTarget,
   RequareAuth,

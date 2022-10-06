@@ -27,7 +27,7 @@ export const BlogList = () => {
       {blogs.map((blog) => {
         return (
           <Link to={`/blog/${blog.id}`} key={blog.id}>
-            <BlogItem blog={blog} key={blog.id} />
+            <BlogItem blog={blog} />
           </Link>
         );
       })}

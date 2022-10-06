@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
+import { Color } from "ui/colors";
 
 const StyledInput = styled.input`
   width: 100%;
@@ -11,6 +11,7 @@ const StyledInput = styled.input`
   background-color: ${Color.Light};
   border: 1px solid ${Color.Shadow};
   color: ${Color.Medium};
+  z-index: 5;
 `;
 
 export { StyledInput };

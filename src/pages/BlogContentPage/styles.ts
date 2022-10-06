@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
+import { Media } from "ui/intex";
+import { Color } from "ui/colors";
 
 const StyledBlogContent = styled.div`
   min-height: 100vh;
-  margin-top: 72px;
+  margin-top: 152px;
 `;
 
 const Button = styled.button`
@@ -29,12 +30,21 @@ const Title = styled.h2`
   font-size: 56px;
   line-height: 80px;
   color: ${Color.Secondary};
+
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 36px;
 `;
 
 const ContentImage = styled.img`
   width: 100%;
   height: 518px;
   border-radius: 16px;
+
+  ${Media.MD} {
+    width: 272px;
+    height: 224px;
+  }
 `;
 
 const Description = styled.p`
@@ -43,6 +53,15 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 32px;
   color: ${Color.Secondary};
+
+  ${Media.LG} {
+    padding: 0;
+  }
+
+  ${Media.MD} {
+    padding: 0;
+    margin-block: 36px;
+  }
 `;
 
 export { StyledBlogContent, Button, Post, Title, ContentImage, Description };

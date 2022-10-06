@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Media } from "../../ui/intex";
-import { Color } from "../../ui/colors";
+import { Media } from "ui/intex";
+import { Color } from "ui/colors";
 
 const StyledFooter = styled.div`
   display: flex;
@@ -20,6 +20,10 @@ const CopyRight = styled.h3`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
+  ${Media.MD} {
+    margin-bottom: 24px;
+  }
 `;
 
 const Text = styled.h3`
@@ -35,6 +39,7 @@ const ThemeFooter = styled.button`
   line-height: 24px;
   padding: 0 10px;
   border-radius: 5px;
+  cursor: pointer;
   background-color: ${Color.Secondary};
   color: ${Color.White};
 `;

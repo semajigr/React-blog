@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
-import { Media } from "../../ui/intex";
+import { Color } from "ui/colors";
+import { Media } from "ui/intex";
 
 const StyledArticleContent = styled.div`
   min-height: 100vh;
-  margin-top: 72px;
+  margin-top: 152px;
 `;
 
 const Button = styled.button`

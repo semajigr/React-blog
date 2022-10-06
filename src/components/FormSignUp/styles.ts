@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
-import { Media } from "../../ui/intex";
+import { Color } from "ui/colors";
+import { Media } from "ui/intex";
 
 const StyledForm = styled.form`
   display: flex;
@@ -64,6 +64,10 @@ const SignInLink = styled(Link)`
   font-size: 16px;
   line-height: 20px;
   color: ${Color.Primary};
+
+  :hover {
+    color: ${Color.PrimaryLight};
+  }
 
   ${Media.MD} {
     font-size: 14px;

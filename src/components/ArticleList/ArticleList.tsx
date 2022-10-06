@@ -27,7 +27,7 @@ export const ArticleList = () => {
       {articles.map((article) => {
         return (
           <Link to={`/article/${article.id}`} key={article.id}>
-            <ArticleItem article={article} key={article.id} />
+            <ArticleItem article={article} />
           </Link>
         );
       })}

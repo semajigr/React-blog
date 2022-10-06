@@ -28,9 +28,7 @@ export const Account = () => {
       <Container>
         <Name>Name: {name}</Name>
         <Email>Email: {email}</Email>
-        <CreationTime>
-          Account creation time: {new Date(creationTime).toLocaleDateString()}
-        </CreationTime>
+        <CreationTime>Creation time: {new Date(creationTime).toLocaleDateString()}</CreationTime>
         <LogOut type="button" onClick={handleOut}>
           Log out
         </LogOut>

@@ -4,7 +4,7 @@ import { fetchSearchBlogs } from "app/feautures";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getSearchBlogs } from "app/selectors";
 import { IBlogs } from "types";
-import { BlogItem, ErrorMessage, Spinner } from "components";
+import { BlogItem, ErrorMessage, Spinner, NotFound } from "components";
 import { StyledSearchBlog } from "./styles";
 
 interface IProps {
@@ -29,12 +29,12 @@ export const SearchBlog = ({ value }: IProps) => {
   }
 
   return blogs.length === 0 ? (
-    <h1></h1>
+    <NotFound />
   ) : (
     <StyledSearchBlog>
       {blogs.map((blogs: IBlogs) => {
         return (
-          <Link to={`/blogs/${blogs.id}`}>
+          <Link to={`/blogs/${blogs.id}`} key={blogs.id}>
             <BlogItem blog={blogs} />
           </Link>
         );

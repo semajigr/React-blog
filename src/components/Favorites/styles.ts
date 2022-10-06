@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/intex";
+import { Media } from "ui/intex";
 
 const StyledFavorites = styled.div`
   display: grid;
@@ -14,6 +14,7 @@ const StyledFavorites = styled.div`
 
   ${Media.MD} {
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 32px 0;
   }
 `;
 

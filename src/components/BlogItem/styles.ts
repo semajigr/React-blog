@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { FavoritesIcon } from "../../assets";
-import { Media } from "../../ui/intex";
-import { Color } from "../../ui/colors";
+import { FavoritesIcon } from "assets";
+import { Media } from "ui/intex";
+import { Color } from "ui/colors";
 
 const StyledBlogItem = styled.li`
   list-style-type: none;
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
+  box-shadow: 0px 0px 10px 3px rgba(29, 42, 52, 0.2);
 
   ${Media.LG} {
     width: 328px;
@@ -35,6 +36,10 @@ const Date = styled.h3`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Medium};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.h2`
@@ -43,6 +48,10 @@ const Title = styled.h2`
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Secondary};
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`

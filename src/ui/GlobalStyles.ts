@@ -10,7 +10,7 @@ ${theme}
 
 body {
     font-family: "Inter", sans-serif;
-    background-color: var(--gray);  
+    background-color: ${Color.Gray};  
     color: ${Color.White}  
 }
 

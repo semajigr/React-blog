@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
-import { Media } from "../../ui/intex";
+import { Color } from "ui/colors";
+import { Media } from "ui/intex";
 
 const StyledSignUp = styled.div`
   min-height: 100vh;
-  margin-top: 60px;
+  margin-top: 140px;
 `;
 
 const BackToHome = styled(Link)`
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Secondary};
+
+  :hover {
+    color: ${Color.PrimaryLight};
+  }
 `;
 
 const Title = styled.h1`

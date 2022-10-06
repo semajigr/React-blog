@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Media } from "../../ui/intex";
-import { Color } from "../../ui/colors";
+import { Media } from "ui/intex";
+import { Color } from "ui/colors";
 
 const StyledFavoritesArticle = styled.li`
   width: 100%;

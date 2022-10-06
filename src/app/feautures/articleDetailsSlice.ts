@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { spaceFlightAPI } from "../../services/services";
-import { IArticles } from "../../types";
+import { spaceFlightAPI } from "services/services";
+import { IArticles } from "types";
 
 interface ArticleDetailsState {
   articleDetails: IArticles;

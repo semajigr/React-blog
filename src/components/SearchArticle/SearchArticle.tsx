@@ -4,7 +4,7 @@ import { fetchSearchArticles } from "app/feautures";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getSearchArticles } from "app/selectors";
 import { IArticles } from "types";
-import { ArticleItem, ErrorMessage, Spinner } from "components";
+import { ArticleItem, ErrorMessage, Spinner, NotFound } from "components";
 import { StyledSearchArticle } from "./styles";
 
 interface IProps {
@@ -29,12 +29,12 @@ export const SearchArticle = ({ value }: IProps) => {
   }
 
   return articles.length === 0 ? (
-    <h1></h1>
+    <NotFound />
   ) : (
     <StyledSearchArticle>
       {articles.map((article: IArticles) => {
         return (
-          <Link to={`/articles/${article.id}`}>
+          <Link to={`/articles/${article.id}`} key={article.id}>
             <ArticleItem article={article} />
           </Link>
         );

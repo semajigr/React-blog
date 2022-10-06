@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/intex";
+import { Media } from "ui/intex";
 
 const StyledMainTemplate = styled.div`
   display: flex;

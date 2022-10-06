@@ -11,7 +11,7 @@ export const Favorites = () => {
       {favorites.map((article) => {
         return (
           <Link to={`/article/${article.id}`} key={article.id}>
-            <FavoritesArticle article={article} key={article.id} />
+            <FavoritesArticle article={article} />
           </Link>
         );
       })}
