@@ -1,14 +1,21 @@
 {
   "files": {
-    "main.js": "/React-blog/static/js/main.fde7b3e8.js",
+    "main.css": "/React-blog/static/css/main.88474277.css",
+    "main.js": "/React-blog/static/js/main.eb8228cd.js",
+    "static/media/nasa.jpg": "/React-blog/static/media/nasa.9484da08472d12fb9752.jpg",
+    "static/media/logo-mobile.svg": "/React-blog/static/media/logo-mobile.bff707d9dfe43119ee1108027b107aa7.svg",
     "static/media/logo.svg": "/React-blog/static/media/logo.ff6a25346a236e0c880f03051ad152c9.svg",
     "static/media/signin.svg": "/React-blog/static/media/signin.5a46bb3ab6ae548cebb41ffbd731ad5f.svg",
     "static/media/favorites.svg": "/React-blog/static/media/favorites.28220c581538742fc7469c10d8a9e269.svg",
     "index.html": "/React-blog/index.html",
+    "static/media/burger.svg": "/React-blog/static/media/burger.dc8c11df0e94af9aa2f1392ff2e49292.svg",
     "static/media/search.svg": "/React-blog/static/media/search.7f0947de943e2eef52a15b039a4ae707.svg",
-    "main.fde7b3e8.js.map": "/React-blog/static/js/main.fde7b3e8.js.map"
+    "static/media/close.svg": "/React-blog/static/media/close.b470980cd35be09e318517096083a587.svg",
+    "main.88474277.css.map": "/React-blog/static/css/main.88474277.css.map",
+    "main.eb8228cd.js.map": "/React-blog/static/js/main.eb8228cd.js.map"
   },
   "entrypoints": [
-    "static/js/main.fde7b3e8.js"
+    "static/css/main.88474277.css",
+    "static/js/main.eb8228cd.js"
   ]
 }
