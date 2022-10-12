@@ -1,3 +1,4 @@
+import { ResetPasswordPage } from "pages/ResetPasswordPage/ResetPasswordPage";
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequareAuth } from "./components";
 import {
@@ -24,6 +25,7 @@ export const App = () => {
         <Route path={ROUTE.ARTICLE} element={<ArticleContentPage />} />
         <Route path={ROUTE.BLOG} element={<BlogContentPage />} />
         <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />
+        <Route path={ROUTE.RESET} element={<ResetPasswordPage />} />
         <Route element={<RequareAuth />}>
           <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
           <Route path={ROUTE.ACCOUNT} element={<Account />} />

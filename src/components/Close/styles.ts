@@ -6,6 +6,7 @@ const StyledClose = styled.button`
   width: 24px;
   height: 24px;
   background: none;
+  cursor: pointer;
 `;
 
 const ClosesIcon = styled(CloseIcon)`

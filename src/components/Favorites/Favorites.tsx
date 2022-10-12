@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "app/hooks";
 import { FavoritesArticle } from "components";
 import { StyledFavorites } from "./styles";
+import { getFavoriteArticle } from "app/selectors";
 
 export const Favorites = () => {
-  const { favorites } = useAppSelector((state) => state.persistedReducer.favorites);
+  const { favorites } = useAppSelector(getFavoriteArticle);
 
   return (
     <StyledFavorites>

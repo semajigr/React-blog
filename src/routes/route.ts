@@ -8,4 +8,5 @@ export enum ROUTE {
   BLOG = "/blog/:id",
   NOT_FOUND = "*",
   ACCOUNT = "/account",
+  RESET = "/reset",
 }

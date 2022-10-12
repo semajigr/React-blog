@@ -25,6 +25,9 @@ import { Burger } from "./Burger/Burger";
 import { BurgerNavbar } from "./BurgerNavbar/BurgerNavbar";
 import { Close } from "./Close/Close";
 import { NotFound } from "./NotFound/NotFound";
+import { Pagination } from "./Pagination/Pagination";
+import { ResetPassword } from "./ResetPassword/ResetPassword";
+import { Slider } from "./Slider/Slider";
 
 export {
   ArticleItem,
@@ -47,12 +50,15 @@ export {
   Modal,
   Navbar,
   NotFound,
+  Pagination,
   Portal,
   PortalTarget,
   RequareAuth,
+  ResetPassword,
   Search,
   SearchArticle,
   SearchBlog,
+  Slider,
   Spinner,
   Tabbar,
 };

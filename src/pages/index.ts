@@ -7,6 +7,7 @@ import { SignInPage } from "./SignInPage/SignInPage";
 import { SignUpPage } from "./SignUpPage/SignUpPage";
 import { Account } from "./Account/Account";
 import { BlogContentPage } from "./BlogContentPage/BlogContentPage";
+import { ResetPasswordPage } from "./ResetPasswordPage/ResetPasswordPage";
 
 export {
   Account,
@@ -15,6 +16,7 @@ export {
   FavoritesPage,
   HomePage,
   NotFoundPage,
+  ResetPasswordPage,
   SearchPage,
   SignInPage,
   SignUpPage,

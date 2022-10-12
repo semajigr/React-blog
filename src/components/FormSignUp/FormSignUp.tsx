@@ -111,7 +111,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
 
       {error && <Error>{error}</Error>}
 
-      <StyledButton type="submit">Sign Up {isPendingAuth && <Spinner />}</StyledButton>
+      <StyledButton type="submit">{isPendingAuth ? <Spinner /> : "Sign Up"}</StyledButton>
     </StyledForm>
   );
 };

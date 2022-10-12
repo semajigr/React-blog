@@ -41,29 +41,6 @@ const BurgerNavItem = styled.li`
   }
 `;
 
-const BurgerThemeItem = styled.li`
-  list-style: none;
-  align-items: center;
-  width: 271px;
-  text-align: center;
-`;
-
-const BurgerTheme = styled.button`
-  width: 100%;
-  font-size: 16px;
-  line-height: 24px;
-  color: ${Color.Secondary};
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-  cursor: pointer;
-  background-color: ${Color.Gray};
-
-  :focus,
-  :active {
-    border-bottom: 1px solid ${Color.Secondary};
-  }
-`;
-
 const CustomLink = styled(Link)`
   font-size: 16px;
   line-height: 24px;
@@ -76,12 +53,4 @@ const FavoriteIcon = styled(FavoritesIcon)`
   }
 `;
 
-export {
-  StyledBurgerNav,
-  BurgerNavList,
-  BurgerNavItem,
-  FavoriteIcon,
-  CustomLink,
-  BurgerThemeItem,
-  BurgerTheme,
-};
+export { StyledBurgerNav, BurgerNavList, BurgerNavItem, FavoriteIcon, CustomLink };

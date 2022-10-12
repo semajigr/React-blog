@@ -1,13 +1,13 @@
 import { CustomSelectArticle, CustomSelectBlog } from "components";
 import { useToggle } from "hooks/useToggle";
-import { ButtonTab, ContainerTab, StyledTabbar } from "./styles";
+import { ButtonTab, ButtonTabIsActive, ContainerTab, StyledTabbar } from "./styles";
 
 interface IProps {
   tab: string;
   setTab: (tab: string) => void;
 }
 
-export const Tabbar = ({ setTab }: IProps) => {
+export const Tabbar = ({ setTab, tab }: IProps) => {
   const [isActive, setIsActive] = useToggle(false);
 
   const handleArticle = () => {
@@ -23,7 +23,11 @@ export const Tabbar = ({ setTab }: IProps) => {
   return (
     <StyledTabbar>
       <ContainerTab>
-        <ButtonTab onClick={handleArticle}>Articles</ButtonTab>
+        {tab === "articles" ? (
+          <ButtonTabIsActive>Articles</ButtonTabIsActive>
+        ) : (
+          <ButtonTab onClick={handleArticle}>Articles</ButtonTab>
+        )}
         <ButtonTab onClick={handleBlog}>Blogs</ButtonTab>
       </ContainerTab>
       {isActive ? <CustomSelectArticle /> : <CustomSelectBlog />}

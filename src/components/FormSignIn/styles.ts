@@ -35,7 +35,7 @@ const EmailInput = styled.input`
   width: 100%;
   padding: 18px;
   margin-top: 8px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 20px;
   background-color: ${Color.Light};
@@ -51,7 +51,7 @@ const PasswordInput = styled.input`
   width: 100%;
   padding: 18px;
   margin-top: 8px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 20px;
   background-color: ${Color.Light};
@@ -66,6 +66,7 @@ const PasswordInput = styled.input`
 const StyledButton = styled.button`
   padding: 16px 240px;
   margin-top: 30px;
+  margin-bottom: 24px;
   font-size: 16px;
   line-height: 24px;
   border-radius: 4px;
@@ -84,6 +85,7 @@ const StyledButton = styled.button`
 `;
 
 const Auth = styled.p`
+  margin: 0 auto;
   font-size: 16px;
   line-height: 20px;
   color: ${Color.SemiGray};
@@ -112,6 +114,20 @@ const Error = styled.p`
   color: ${Color.Error};
 `;
 
+const Reset = styled(Link)`
+  font-size: 16px;
+  line-height: 20px;
+  color: ${Color.Secondary};
+
+  :hover {
+    color: ${Color.PrimaryLight};
+  }
+
+  ${Media.MD} {
+    font-size: 14px;
+  }
+`;
+
 export {
   StyledForm,
   StyledTitle,
@@ -121,4 +137,5 @@ export {
   Auth,
   Error,
   SignUpLink,
+  Reset,
 };

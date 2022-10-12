@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { spaceFlightAPI } from "services/services";
+import { spaceFlightAPI } from "services/SpaceFlightAPI";
 import { IBlogs } from "types";
 
 interface BlogsState {
@@ -32,6 +32,30 @@ const fetchSelectBlogs = createAsyncThunk<IBlogs[], string, { rejectValue: strin
   async (value, { rejectWithValue }) => {
     try {
       return await spaceFlightAPI.getSelectBlogs(value);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
+const fetchBlogsPage = createAsyncThunk<IBlogs[], number, { rejectValue: string }>(
+  "articles/fetchBlogsPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getBlogsPage(page);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
+const fetchSortBlogsPage = createAsyncThunk<IBlogs[], number, { rejectValue: string }>(
+  "articles/fetchSortBlogsPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getSortBlogsPage(page);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);
@@ -100,8 +124,38 @@ const blogsSlice = createSlice({
         state.error = payload;
       }
     });
+
+    builder.addCase(fetchBlogsPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchBlogsPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.blogs = payload;
+    });
+    builder.addCase(fetchBlogsPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
+
+    builder.addCase(fetchSortBlogsPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSortBlogsPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.blogs = payload;
+    });
+    builder.addCase(fetchSortBlogsPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default blogsSlice.reducer;
-export { fetchBlogs, fetchSelectBlogs, fetchSearchBlogs };
+export { fetchBlogs, fetchSelectBlogs, fetchSearchBlogs, fetchSortBlogsPage, fetchBlogsPage };

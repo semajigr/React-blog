@@ -3,16 +3,27 @@ import { Link, useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "app/feautures";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getDetailsArticle } from "app/selectors";
-import { Spinner, ErrorMessage } from "components";
+import { Spinner, ErrorMessage, Slider } from "components";
 import { ROUTE } from "routes";
-import { Button, ContentImage, Description, Post, StyledArticleContent, Title } from "./styles";
+import {
+  AboutContent,
+  Button,
+  ContentDate,
+  ImageDescription,
+  ContentImage,
+  Description,
+  Post,
+  StyledArticleContent,
+  Title,
+  LinkLearnMore,
+} from "./styles";
 
 export const ArticleContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { isLoading, error, articleDetails } = useAppSelector(getDetailsArticle);
-  const { title, imageUrl, summary } = articleDetails;
+  const { isLoading, error, articleDetails, similar } = useAppSelector(getDetailsArticle);
+  const { title, imageUrl, summary, newsSite, url } = articleDetails;
 
   useEffect(() => {
     id && dispatch(fetchArticleByDetails(id));
@@ -34,8 +45,15 @@ export const ArticleContentPage = () => {
         </Button>
       </Link>
       <Title>{title}</Title>
-      <ContentImage src={imageUrl} />
+      <ImageDescription>
+        <ContentImage src={imageUrl} />
+        <ContentDate>
+          <AboutContent>{newsSite}</AboutContent>
+        </ContentDate>
+      </ImageDescription>
       <Description>{summary}</Description>
+      <LinkLearnMore href={url}>Learn more</LinkLearnMore>
+      <Slider similar={similar} />
     </StyledArticleContent>
   );
 };

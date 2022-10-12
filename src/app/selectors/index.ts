@@ -5,6 +5,7 @@ import { getDetailsBlog } from "./blogDetailsSelector";
 import { getSearchBlogs } from "./blogSearch";
 import { getBlogs } from "./blogSelector";
 import { getUserInfo } from "./userSelector";
+import { getFavoriteArticle } from "./favoritesSelector";
 
 export {
   getDetailsArticle,
@@ -14,4 +15,5 @@ export {
   getSearchBlogs,
   getBlogs,
   getUserInfo,
+  getFavoriteArticle,
 };

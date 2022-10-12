@@ -14,12 +14,12 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites(state, { payload }: PayloadAction<IArticles>) {
-      const result = state.favorites.find((article) => article.id === payload.id);
+      const result = state.favorites.find(({ id }) => id === payload.id);
       if (!result) state.favorites.push(payload);
     },
-    removeFavorites(state, { payload }: PayloadAction<number | undefined>) {
-      state.favorites = state.favorites.filter((article) => {
-        return article.id !== payload;
+    removeFavorites(state, { payload }: PayloadAction<number>) {
+      state.favorites = state.favorites.filter(({ id }) => {
+        return id !== payload;
       });
     },
   },

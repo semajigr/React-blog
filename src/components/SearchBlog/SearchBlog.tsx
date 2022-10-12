@@ -4,7 +4,7 @@ import { fetchSearchBlogs } from "app/feautures";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getSearchBlogs } from "app/selectors";
 import { IBlogs } from "types";
-import { BlogItem, ErrorMessage, Spinner, NotFound } from "components";
+import { BlogItem, NotFound } from "components";
 import { StyledSearchBlog } from "./styles";
 
 interface IProps {
@@ -14,19 +14,11 @@ interface IProps {
 
 export const SearchBlog = ({ value }: IProps) => {
   const dispatch = useAppDispatch();
-  const { isLoading, error, blogs } = useAppSelector(getSearchBlogs);
+  const { blogs } = useAppSelector(getSearchBlogs);
 
   useEffect(() => {
     value !== "" ? dispatch(fetchSearchBlogs(value)) : dispatch(fetchSearchBlogs("@"));
   }, [dispatch, value]);
-
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (error) {
-    return <ErrorMessage />;
-  }
 
   return blogs.length === 0 ? (
     <NotFound />
@@ -34,7 +26,7 @@ export const SearchBlog = ({ value }: IProps) => {
     <StyledSearchBlog>
       {blogs.map((blogs: IBlogs) => {
         return (
-          <Link to={`/blogs/${blogs.id}`} key={blogs.id}>
+          <Link to={`/blog/${blogs.id}`} key={blogs.id}>
             <BlogItem blog={blogs} />
           </Link>
         );

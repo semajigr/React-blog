@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { spaceFlightAPI } from "services/services";
+import { AxiosError } from "axios";
+import { spaceFlightAPI } from "services/SpaceFlightAPI";
 import { IArticles } from "types";
 
 interface ArticleDetailsState {
   articleDetails: IArticles;
   isLoading: boolean;
   error: null | string;
+  similar: IArticles[];
 }
 
 const initialState: ArticleDetailsState = {
@@ -34,14 +36,25 @@ const initialState: ArticleDetailsState = {
       },
     ],
   },
+  similar: [],
 };
 
-export const fetchArticleByDetails = createAsyncThunk<IArticles, string>(
-  "articleDetails/fetchArticleByDetails",
-  async (id) => {
-    return await spaceFlightAPI.getArticleDetailsById(id);
+export const fetchArticleByDetails = createAsyncThunk<
+  { articleDetails: IArticles; similar: any },
+  string,
+  { rejectValue: string }
+>("articleDetails/fetchArticleByDetails", async (id, { rejectWithValue }) => {
+  try {
+    const articleDetails = await spaceFlightAPI.getArticleDetailsById(id);
+    const name = articleDetails.title.split(" ")[0];
+    const similar = await spaceFlightAPI.getArticlesSimilar(name);
+
+    return { articleDetails, similar };
+  } catch (error) {
+    const AxiosError = error as AxiosError;
+    return rejectWithValue(AxiosError.message);
   }
-);
+});
 
 const articleDetailsSlice = createSlice({
   name: "articleDetails",
@@ -54,7 +67,8 @@ const articleDetailsSlice = createSlice({
     });
     builder.addCase(fetchArticleByDetails.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.articleDetails = payload;
+      state.articleDetails = payload.articleDetails;
+      state.similar = payload.similar;
     });
     builder.addCase(fetchArticleByDetails.rejected, (state, { payload }) => {
       if (payload) {

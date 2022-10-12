@@ -10,4 +10,5 @@ export enum Color {
   Gray = "var(--gray)",
   Shadow = "var(--shadow)",
   SemiGray = "var(--semiGray)",
+  LightGray = "var(--lightGray)",
 }

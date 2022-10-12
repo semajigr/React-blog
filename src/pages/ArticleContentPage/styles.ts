@@ -3,7 +3,6 @@ import { Color } from "ui/colors";
 import { Media } from "ui/intex";
 
 const StyledArticleContent = styled.div`
-  min-height: 100vh;
   margin-top: 152px;
 `;
 
@@ -49,6 +48,41 @@ const ContentImage = styled.img`
   }
 `;
 
+const ImageDescription = styled.div`
+  position: relative;
+  text-align: center;
+`;
+
+const ContentDate = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: ${Color.LightGray};
+  opacity: 0.9;
+  position: absolute;
+  top: 90.8%;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  ${Media.MD} {
+    top: 83%;
+  }
+`;
+
+const AboutContent = styled.h3`
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 26px;
+  padding: 10px 30px;
+  color: ${Color.ExtraLight};
+
+  ${Media.MD} {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 5px 10px;
+  }
+`;
+
 const Description = styled.p`
   margin-block: 48px;
   padding-inline: 100px;
@@ -66,4 +100,30 @@ const Description = styled.p`
   }
 `;
 
-export { StyledArticleContent, Button, Post, Title, ContentImage, Description };
+const LinkLearnMore = styled.a`
+  display: block;
+  width: 130px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  border: 1px solid ${Color.Secondary};
+  color: ${Color.Secondary};
+
+  :hover {
+    color: ${Color.PrimaryLight};
+    border: 1px solid ${Color.PrimaryLight};
+  }
+`;
+
+export {
+  StyledArticleContent,
+  Button,
+  Post,
+  Title,
+  ContentImage,
+  Description,
+  ImageDescription,
+  ContentDate,
+  AboutContent,
+  LinkLearnMore,
+};

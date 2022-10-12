@@ -9,6 +9,11 @@ const StyledFavoritesArticle = styled.li`
   border-radius: 16px;
   list-style: none;
 
+  &:hover {
+    box-shadow: 0px 0px 20px 10px rgba(24, 42, 56, 0.3);
+    transition: all 1s;
+  }
+
   ${Media.LG} {
     width: 328px;
   }
@@ -29,7 +34,7 @@ const Description = styled.div`
   margin: 20px 20px;
 `;
 
-const Date = styled.h3`
+const CustomDate = styled.h3`
   margin-bottom: 5px;
   font-weight: 500;
   font-size: 16px;
@@ -73,4 +78,4 @@ const Button = styled.button`
   }
 `;
 
-export { StyledFavoritesArticle, Image, Date, Description, Title, Button };
+export { StyledFavoritesArticle, Image, CustomDate, Description, Title, Button };

@@ -9,6 +9,7 @@ import {
   SearchIcons,
   FavoriteIcon,
   BurgerItem,
+  EmptyFavoriteIcon,
 } from "./styles";
 import { LogoIcon, MobileLogoIcon, SignInIcon } from "assets";
 import { ROUTE } from "routes";
@@ -16,23 +17,25 @@ import { useAppSelector } from "app/hooks";
 import { getUserInfo } from "app/selectors";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "hooks/useWindowSize";
-import { useState } from "react";
 import { Breakpoints } from "ui/intex";
 import { Burger, BurgerNavbar, Close } from "components";
 import { AnimatePresence } from "framer-motion";
+import { useToggle } from "hooks/useToggle";
+import { getFavoriteArticle } from "app/selectors";
 
 export const Navbar = () => {
   const { isAuth, name } = useAppSelector(getUserInfo);
   const [width] = useWindowSize();
+  const { favorites } = useAppSelector(getFavoriteArticle);
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useToggle(false);
 
-  const handleOpenBurger = () => {
-    setIsOpen(true);
+  const handleOpenBurger = (): void => {
+    setIsOpen();
   };
 
-  const handleCloseBurger = () => {
-    setIsOpen(false);
+  const handleCloseBurger = (): void => {
+    setIsOpen();
   };
 
   return (
@@ -49,7 +52,7 @@ export const Navbar = () => {
             <>
               <FavoritesItem>
                 <Link to={ROUTE.FAVORITES}>
-                  <FavoriteIcon />
+                  {favorites.length ? <FavoriteIcon /> : <EmptyFavoriteIcon />}
                 </Link>
               </FavoritesItem>
               <AccountItem>

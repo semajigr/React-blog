@@ -3,16 +3,28 @@ import { Link, useParams } from "react-router-dom";
 import { fetchBlogByDetails } from "app/feautures";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { getDetailsBlog } from "app/selectors";
-import { ErrorMessage, Spinner } from "components";
+import { ErrorMessage, Spinner, Slider } from "components";
 import { ROUTE } from "routes";
-import { Button, ContentImage, Description, Post, StyledBlogContent, Title } from "./styles";
+import {
+  AboutContent,
+  Button,
+  ContentDate,
+  ContentImage,
+  Description,
+  ImageDescription,
+  LinkLearnMore,
+  Post,
+  StyledBlogContent,
+  Title,
+} from "./styles";
+import { nasa } from "assets";
 
 export const BlogContentPage = () => {
   const { id } = useParams();
 
   const dispatch = useAppDispatch();
-  const { isLoading, error, blogDetails } = useAppSelector(getDetailsBlog);
-  const { title, imageUrl, summary } = blogDetails;
+  const { isLoading, error, blogDetails, similar } = useAppSelector(getDetailsBlog);
+  const { title, imageUrl, summary, newsSite, url } = blogDetails;
 
   useEffect(() => {
     id && dispatch(fetchBlogByDetails(id));
@@ -34,8 +46,15 @@ export const BlogContentPage = () => {
         </Button>
       </Link>
       <Title>{title}</Title>
-      <ContentImage src={imageUrl} />
+      <ImageDescription>
+        <ContentImage src={imageUrl.endsWith(".jpg") ? imageUrl : nasa} />
+        <ContentDate>
+          <AboutContent>{newsSite}</AboutContent>
+        </ContentDate>
+      </ImageDescription>
       <Description>{summary}</Description>
+      <LinkLearnMore href={url}>Learn more</LinkLearnMore>
+      <Slider similar={similar} />
     </StyledBlogContent>
   );
 };

@@ -3,6 +3,7 @@ import { getFirebaseMessage } from "utils";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -79,6 +80,19 @@ export const fetchSignOut = createAsyncThunk<void, undefined, { rejectValue: Fir
   }
 );
 
+export const resetPassword = createAsyncThunk<void, { userEmail: string }, { rejectValue: string }>(
+  "user/resetPassword",
+  async ({ userEmail }, { rejectWithValue }) => {
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, userEmail);
+    } catch (error) {
+      const firebaseError = error as { code: FirebaseErrorCode };
+      return rejectWithValue(getFirebaseMessage(firebaseError.code));
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -144,6 +158,20 @@ const userSlice = createSlice({
         state.isPendingAuth = false;
         state.error = payload;
         state.isAuth = true;
+      }
+    });
+
+    builder.addCase(resetPassword.pending, (state) => {
+      state.isPendingAuth = true;
+      state.error = null;
+    });
+    builder.addCase(resetPassword.fulfilled, (state) => {
+      state.isPendingAuth = false;
+      state.error = null;
+    });
+    builder.addCase(resetPassword.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isPendingAuth = false;
       }
     });
   },

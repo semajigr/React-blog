@@ -1,48 +1,119 @@
 GH-Pages: "https://semajigr.github.io/React-blog/"
 
-# Getting Started with Create React App
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a name="readme-top"></a>
 
-## Available Scripts
+<a name="readme-top"></a>
 
-In the project directory, you can run:
+<br />
+<div align="center">
+  <a href="https://github.com/semajigr/React-blog/tree/develop">
+    <img src="images/logo.png" alt="Logo" >
+  </a>
 
-### `npm start`
+  <h3 align="center">Blogologo</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <p align="center">
+       <br />
+    <a href="https://github.com/semajigr/React-blog/tree/develop"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/semajigr/React-blog/tree/develop">View Demo</a>
+    ·
+    <a href="https://semajigr.github.io/React-blog/">You can see result</a>
+    ·
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  </p>
+</div>
 
-### `npm test`
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About The Project
 
-### `npm run build`
+A web application with which you can find articles and blogs you are interested in, the application also has additional features that are described bellow.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-### `npm run eject`
+- [![React][react.js]][react-url]
+- [![styled-components][styled-components]][styled-components-url]
+- [![React Router][reactrouter.com]][react-router-url]
+- [![React Hook Form][react-hook-form.com]][react-hook-form-url]
+- [![React Select][react-select.com]][react-select-url]
+- [![Redux Toolkit][redux-toolkit.js.org]][redux-url]
+- [![Framer Motion][framer.com]][framer-url]
+- [![Firebase][firebase.google.com]][firebase-url]
+- [![Redux Persist][github.com/rt2zz/redux-persist]][persist-url]
+- [![keen-slider][keen-slider.com]][keen-slider-url]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Use the `npm start` to get started.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+Use the `npm install` to install all libraries.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/semajigr/React-blog/tree/develop
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+
+Once on the home page, the user sees the first 12 articles provided by the open database (Spaceflight News API).
+
+<img src="images/home.png" alt="Home Page">
+
+By clicking on the article card, you can see detailed information as well as recommended articles.
+
+<img src="images/details.png" alt="Details Page">
+
+Registration forms are easy to use and you can learn more about them by visiting the site.
+
+By sign up you can place your favorite articles in your favorites.
+
+<img src="images/favorites.png" alt="Favorites Page">
+
+## Contact
+
+Igot Siomushkin - [semajigr@gmail.com](email)
+
+Project Link: [https://github.com/semajigr/React-blog/tree/develop](https://github.com/semajigr/React-blog/tree/develop)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

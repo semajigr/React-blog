@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { spaceFlightAPI } from "services/services";
+import { spaceFlightAPI } from "services/SpaceFlightAPI";
 import { IArticles } from "types";
 
 interface ArticlesState {
@@ -32,6 +32,30 @@ const fetchSelectArticles = createAsyncThunk<IArticles[], string, { rejectValue:
   async (value, { rejectWithValue }) => {
     try {
       return await spaceFlightAPI.getSelectArticles(value);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
+const fetchArticlesPage = createAsyncThunk<IArticles[], number, { rejectValue: string }>(
+  "articles/fetchArticlesPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getArticlesPage(page);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  }
+);
+
+const fetchSortArticlesPage = createAsyncThunk<IArticles[], number, { rejectValue: string }>(
+  "articles/fetchSortArticlesPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlightAPI.getSortArticlesPage(page);
     } catch (error) {
       const AxiosError = error as AxiosError;
       return rejectWithValue(AxiosError.message);
@@ -100,8 +124,44 @@ const articlesSlice = createSlice({
         state.error = payload;
       }
     });
+
+    builder.addCase(fetchArticlesPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchArticlesPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.articles = payload;
+    });
+    builder.addCase(fetchArticlesPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
+
+    builder.addCase(fetchSortArticlesPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSortArticlesPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.articles = payload;
+    });
+    builder.addCase(fetchSortArticlesPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default articlesSlice.reducer;
-export { fetchArticles, fetchSelectArticles, fetchSearchArticles };
+export {
+  fetchArticles,
+  fetchSelectArticles,
+  fetchSearchArticles,
+  fetchArticlesPage,
+  fetchSortArticlesPage,
+};

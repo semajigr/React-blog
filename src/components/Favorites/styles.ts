@@ -4,7 +4,6 @@ import { Media } from "ui/intex";
 const StyledFavorites = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
   grid-gap: 40px 32px;
 
   ${Media.LG} {

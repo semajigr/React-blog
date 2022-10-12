@@ -2,13 +2,20 @@ import styled from "styled-components";
 import { FavoritesIcon } from "assets";
 import { Media } from "ui/intex";
 import { Color } from "ui/colors";
+import { motion } from "framer-motion";
 
-const StyledBlogItem = styled.li`
+const StyledBlogItem = styled(motion.li)`
   list-style-type: none;
+
   height: 388px;
   background-color: ${Color.White};
   border-radius: 16px;
   box-shadow: 0px 0px 10px 3px rgba(29, 42, 52, 0.2);
+
+  &:hover {
+    box-shadow: 0px 0px 20px 10px rgba(24, 42, 56, 0.3);
+    transition: all 1s;
+  }
 
   ${Media.LG} {
     width: 328px;
@@ -30,7 +37,7 @@ const Content = styled.div`
   margin: 20px 20px;
 `;
 
-const Date = styled.h3`
+const CustomDate = styled.h3`
   margin-bottom: 5px;
   font-weight: 500;
   font-size: 16px;
@@ -75,4 +82,4 @@ const FavoriteIcon = styled(FavoritesIcon)`
   }
 `;
 
-export { StyledBlogItem, Image, Content, Date, Title, Button, FavoriteIcon };
+export { StyledBlogItem, Image, Content, CustomDate, Title, Button, FavoriteIcon };

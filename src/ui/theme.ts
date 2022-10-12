@@ -13,6 +13,7 @@ export const theme = css`
     --gray: #f3f3f3;
     --shadow: #eaeaeb;
     --semiGray: #c1c1c3;
+    --lightGray: #4c4d4d;
   }
   html[data-theme="dark"] {
     --primary: #6c1bdb;
@@ -26,5 +27,6 @@ export const theme = css`
     --gray: #313037;
     --shadow: #eaeaeb;
     --semiGray: #c1c1c3;
+    --lightGray: #4c4d4d;
   }
 `;

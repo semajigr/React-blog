@@ -44,6 +44,13 @@ const SearchIcons = styled(SearchIcon)`
 const FavoriteIcon = styled(FavoritesIcon)`
   path {
     stroke: ${Color.Secondary};
+    fill: ${Color.Error};
+  }
+`;
+
+const EmptyFavoriteIcon = styled(FavoritesIcon)`
+  path {
+    stroke: ${Color.Secondary};
   }
 `;
 
@@ -74,4 +81,5 @@ export {
   AccountName,
   SearchIcons,
   FavoriteIcon,
+  EmptyFavoriteIcon,
 };

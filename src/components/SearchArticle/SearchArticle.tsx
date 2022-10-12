@@ -34,7 +34,7 @@ export const SearchArticle = ({ value }: IProps) => {
     <StyledSearchArticle>
       {articles.map((article: IArticles) => {
         return (
-          <Link to={`/articles/${article.id}`} key={article.id}>
+          <Link to={`/article/${article.id}`} key={article.id}>
             <ArticleItem article={article} />
           </Link>
         );

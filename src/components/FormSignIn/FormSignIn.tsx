@@ -14,6 +14,7 @@ import {
   Error,
   SignUpLink,
   StyledTitle,
+  Reset,
 } from "./styles";
 
 type SignInValues = {
@@ -99,12 +100,13 @@ export const FormSignIn = () => {
 
       {errors.password && <Error>{errors.password.message}</Error>}
 
+      <Reset to={ROUTE.RESET}>Forgot password? </Reset>
+      {error && <Error>{error}</Error>}
+      <StyledButton type="submit">{isPendingAuth ? <Spinner /> : "Sign In"}</StyledButton>
       <Auth>
         Dont have an account?
         <SignUpLink to={ROUTE.SIGN_UP}> Sign Up</SignUpLink>
       </Auth>
-      {error && <Error>{error}</Error>}
-      <StyledButton type="submit">Sign In {isPendingAuth && <Spinner />}</StyledButton>
     </StyledForm>
   );
 };

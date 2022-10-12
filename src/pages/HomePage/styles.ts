@@ -3,7 +3,6 @@ import { Media } from "ui/intex";
 import { Color } from "ui/colors";
 
 const StyledHomePage = styled.div`
-  min-height: 100vh;
   margin-top: 152px;
   margin-bottom: 72px;
 

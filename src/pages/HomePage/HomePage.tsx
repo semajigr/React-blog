@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArticleList, BlogList, Tabbar } from "components";
+import { ArticleList, BlogList, Tabbar, Pagination } from "components";
 import { StyledHomePage, Title } from "./styles";
 
 export const HomePage = () => {
@@ -10,6 +10,7 @@ export const HomePage = () => {
       <Title>{tab === "articles" ? "Articles" : "Blogs"} </Title>
       <Tabbar tab={tab} setTab={setTab} />
       {tab === "articles" ? <ArticleList /> : <BlogList />}
+      <Pagination />
     </StyledHomePage>
   );
 };
