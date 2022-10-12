@@ -1,6 +1,6 @@
 GH-Pages: "https://semajigr.github.io/React-blog/"
 
-[![Contributors][contributors-shield]][https://github.com/semajigr/react-blog/graphs/contributors]
+[![Contributors][contributors-shield]](https://github.com/semajigr/react-blog/graphs/contributors)
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
