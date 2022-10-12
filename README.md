@@ -1,6 +1,6 @@
 GH-Pages: "https://semajigr.github.io/React-blog/"
 
-[![Contributors][contributors-shield]](https://github.com/semajigr/react-blog/graphs/contributors)
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -117,3 +117,5 @@ Igot Siomushkin - [semajigr@gmail.com](email)
 Project Link: [https://github.com/semajigr/React-blog/tree/develop](https://github.com/semajigr/React-blog/tree/develop)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/issues/semajigr/React-blog?color=red&label=CONTRIBUTORS%20&style=for-the-badge
